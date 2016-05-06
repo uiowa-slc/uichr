@@ -1,0 +1,375 @@
+/* ---------------------------------------------------------------
+Base styles
+--------------------------------------------------------------- */
+#BetterNavigator {
+	display: none;
+}
+body, html {
+  height: 100%;
+}
+html {
+	font-size: 15px;
+	line-height: 1.5;
+	@media screen and (min-width: $break-small) {
+		font-size: $base-font-size;
+		line-height: 1.6;
+	}
+}
+body {
+	background: #fafafa;
+	color: #222;
+	font-family: $body-font;
+	margin: 0;
+	overflow-x: hidden;
+	padding: 0;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+.mobile-hide {
+	@media (max-width: $break-medium ) {
+		display: none;
+	}
+}
+.tablet-hide {
+	@media (max-width: $break-large ) {
+		display: none;
+	}
+}
+.tablet-show {
+	@media (min-width: $break-large) {
+		display: none;
+	}
+}
+
+/* Division Top Bar
+--------------------------------------------------------------- */
+.division-topbar {
+	background: #000;
+}
+.uiowa {
+	line-height: 40px;
+	@media (max-width: 600px) {
+		line-height: 50px;
+	}
+}
+.search-toggle {
+	@media (max-width: 600px) {
+		height: 50px;
+		width: 50px;
+		margin-right: 35px;
+		border-right: 1px solid #222;
+	}
+
+}
+
+.search-toggle {
+	@media only screen and (max-width: 600px) {
+		background-position: 12px 14px;
+	}
+}
+.division-search-input, input.division-search-input[type="search"] {
+	@media (max-width: 600px) {
+		width: 100%;
+	}
+}
+.division-search {
+	@media (min-width: 601px) {
+		right: 110px;
+	}
+	@media (min-width: 769px) {
+		right: 1em;
+	}
+}
+.division-search-input:focus,
+input.division-search-input[type="search"]:focus {
+	@media (max-width: 600px) {
+		width: 100%;
+	}
+}
+
+/* ---------------------------------------------------------------
+Layout
+--------------------------------------------------------------- */
+.container {
+	max-width: $break-xlarge;
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 1em;
+	padding-right: 1em;
+	position: relative;
+	// @media (min-width: $break-small) {
+	// 	width: $break-small - 20;
+	// 	padding-left: 25px;
+	// 	padding-right: 25px;
+	// }
+	@media (min-width: $break-medium) {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+	// @media (min-width: $break-large) {
+	// 	width: $break-large - 20;
+	// }
+	// @media (min-width: $break-xlarge) {
+	// 	width: $break-xlarge - 40;
+	// }
+}
+.main {
+	padding-top: 1em;
+	padding-bottom: 1em;
+	min-height: 600px;
+	@media (min-width: $break-small) {
+		padding-top: 2em;
+		padding-bottom: 2em;
+	}
+}
+.page-photo {
+	background-color: #000;
+	max-height: 600px;
+	overflow: hidden;
+	position: relative;
+	min-height: 250px;
+}
+.page-photo:after {
+	content:'';
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 40%);
+background: -webkit-linear-gradient(top,  rgba(0,0,0,0.75) 0%,rgba(0,0,0,0) 25%,rgba(0,0,0,0) 40%);
+background: linear-gradient(to bottom,  rgba(0,0,0,0.75) 0%,rgba(0,0,0,0) 25%,rgba(0,0,0,0) 40%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3000000', endColorstr='#00000000',GradientType=0 );
+
+}
+.lt-ie10 .headertest {
+	background: url(../images/ie-gradient.png) repeat-x top center;
+}
+.page-photo img {
+	display: block;
+	width: 100%;
+}
+
+.credit-content {
+	& p {
+		display: inline;
+		margin: 0;
+	}
+}
+.fs-navigation-handle {
+	display: none;
+}
+
+
+
+/* ---------------------------------------------------------------
+Justify
+--------------------------------------------------------------- */
+.justify {
+	font-size: 0.1px;
+	list-style: none;
+	margin: 1em 0;
+	overflow: hidden;
+	text-align: justify;
+}
+.justify:after {
+	content: '';
+	display: inline-block;
+	width: 100%;
+}
+.justify-item {
+	display: inline-block;
+	font-size: $base-font-size;
+	margin-bottom: 1em;
+	text-align: left;
+	vertical-align: top;
+	width: 100%;
+}
+.justify-2 .justify-item {
+	@media screen and (min-width: $break-small) {
+		width: 47%;
+	}
+}
+.justify-3 .justify-item {
+	width: 47%;
+	@media screen and (min-width: $break-medium) {
+		width: 30%;
+	}
+}
+.justify-4 .justify-item {
+	width: 47%;
+	@media screen and (min-width: $break-medium) {
+		width: 22%;
+	}
+}
+.justify .filler {
+	height: 0 !important;
+	margin: 0 !important;
+}
+
+/* ---------------------------------------------------------------
+Side bar testimonial
+--------------------------------------------------------------- */
+.sidebar .testimonial {
+	padding: 5px 10px;
+	margin-top: 2em;
+	& img {
+		display: block;
+		margin: 0 auto;
+		border-radius: 50%;
+		margin-bottom: -78px;
+	}
+	& .quote {
+		font-family: $heading-font;
+		font-style: italic;
+	}
+	& .cite {
+		font-size: 14px;
+		background: #0892cb;
+		padding: 10px;
+		position: relative;
+		color: #fff;
+		text-transform: uppercase;
+		font-weight: bold;
+		&:before {
+			content: '';
+			width: 100%;
+			height: 8px;
+			background: $link;
+			opacity: .7;
+			position: absolute;
+			left: 0;
+			top: -8px;
+		}
+		& em {
+			display: block;
+			font-family: $heading-font;
+			text-transform: none;
+		}
+	}
+}
+
+
+
+/* ---------------------------------------------------------------
+Skip Links
+--------------------------------------------------------------- */
+#skiptocontent {
+	position: absolute;
+	left: 10px;
+	top: -100px;
+	transition: .25s;
+}
+#skiptocontent:focus {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	background: #f1f1f1;
+	outline: 0;
+	outline-offset: -2px;
+	padding: 10px;
+	box-shadow: 0 0 2px 2px rgba(0,0,0,.3);
+	z-index: 100;
+}
+#main-content {
+	outline: 0;
+}
+
+/* ---------------------------------------------------------------
+Admin Login form fields
+--------------------------------------------------------------- */
+#MemberLoginForm_LoginForm fieldset,
+.UserDefinedForm fieldset {
+	padding: 1em 0;
+	border: none;
+}
+.UserDefinedForm fieldset .field {
+	margin-bottom: 1em;
+	overflow: hidden;
+}
+#MemberLoginForm_LoginForm .field .text,
+.UserDefinedForm fieldset .field .text {
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.428571429;
+	color: #555555;
+	vertical-align: middle;
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	-webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.UserDefinedForm fieldset .field .textarea {
+	display: block;
+	width: 100%;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.428571429;
+	color: #555555;
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	-webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+#MemberLoginForm_LoginForm #Remember label.right,
+.UserDefinedForm fieldset label.right {
+	float: none;
+	padding-left: 5px;
+}
+.UserDefinedForm fieldset .field .optionset {
+	list-style: none;
+	margin: 0;
+	& li label {
+		font-weight: normal;
+		padding-left: 5px;
+	}
+}
+.UserDefinedForm fieldset label.left {
+	float: none;
+}
+#MemberLoginForm_LoginForm .Actions .action,
+.UserDefinedForm  .Actions .action {
+	display: inline-block;
+	padding: 8px 12px;
+	margin-bottom: 0;
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 1.428571429;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	color: #333;
+	background-image: none;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	text-decoration: none;
+
+	&:hover {
+		background-color: #eee;
+		border-color: #adadad;
+	}
+}
+ .UserDefinedForm .FormHeading {
+ 	border-top: 1px solid #ccc;
+ 	padding: 1em 0;
+ }
+ .ss-form-container {
+ 	box-shadow: none;
+ }
+

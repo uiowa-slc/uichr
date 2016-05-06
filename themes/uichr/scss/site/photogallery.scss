@@ -1,0 +1,102 @@
+.photo-gallery-header {
+	background: #222;
+	color: #fff;
+	text-align: center;
+	padding: 1.5em 0;
+	& h4 {
+		color: #888;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		margin: 0;
+		border-bottom: 1px solid #888;
+		padding-bottom: 5px;
+		font-size: 14px;
+		font-family: $body-font;
+		display: inline-block;
+	}
+	& h3 {
+		color: #fff;
+		margin: 0;
+		margin-top: 20px;
+		font-size: 26px;
+	}
+}
+.photo-gallery {
+	background: #222;
+	color: #fff;
+	text-align: center;
+	@media (min-width: $break-small) {
+		padding-bottom: 1em;
+	}
+}
+.photo-gallery .gallery-cell {
+	width: 100%;
+	@media (min-width: $break-small) {
+		width: 66%;
+	}
+	@media (min-width: $break-large) {
+		width: 900px;
+	}
+
+}
+.photo-gallery .gallery-cell .scale {
+	-webkit-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
+	opacity: .30;
+	transform: scale(0.88);
+}
+.photo-gallery .gallery-cell img {
+	display: block;
+	width: 100%;
+}
+.photo-gallery .gallery-cell.is-selected {
+	z-index: 50;
+}
+.photo-gallery .gallery-cell.is-selected .scale  {
+	opacity: 1;
+	transform: scale(1);
+}
+
+/* prev next buttons */
+.photo-gallery .flickity-prev-next-button {
+	border-radius: 0;
+	background: $link;
+}
+.photo-gallery .flickity-prev-next-button .arrow {
+		fill: #fff;
+}
+.photo-gallery .flickity-prev-next-button.next {
+		right: 0;
+}
+.photo-gallery .flickity-prev-next-button.previous {
+		left: 0;
+}
+
+/* caption */
+.photo-caption {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: rgba(0,0,0,.7);
+	color: #fff;
+	margin: 0;
+	padding: 10px;
+	font-size: 15px;
+	text-align: center;
+	opacity: 0;
+	transition: opacity 0.5s,transform 0.5s ease-in-out;
+	-webkit-transform: translateY(100%);
+	-moz-transform: translateY(100%);
+	-ms-transform: translateY(100%);
+	-o-transform: translateY(100%);
+	transform: translateY(100%);
+}
+.photo-gallery .gallery-cell.is-selected .photo-caption {
+	opacity: 1;
+	-webkit-transform: translateY(0);
+	-moz-transform: translateY(0);
+	-ms-transform: translateY(0);
+	-o-transform: translateY(0);
+	transform: translateY(0);
+}
