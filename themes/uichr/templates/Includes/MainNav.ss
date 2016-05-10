@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="test clearfix">
 			<a href="{$BaseHref}" class="logo">
-				<img src="{$ThemeDir}/images/youth-ballet-logo.png" alt="Youth Ballet">
+				<img src="{$ThemeDir}/images/UICHR-logo.png" alt="Youth Ballet">
 			</a>
 			<nav id="dawgdrops" role="navigation" aria-label="Main menu" class="nav-wrapper">
 				<ul class="nav-menu main-nav">

@@ -17,11 +17,10 @@
 		<% if $Children || $Parent %><%--Determine if Side Nav should be rendered, you can change this logic --%>
 			<div class="col-lg-3  col-lg-pull-9 sidebar">
 				<% include SideNav %>
-				<% include Testimonial %>
 			</div>
 		<% end_if %>
 	</div><!-- end .row -->
 </main><!-- end .container -->
 <% include PhotoGallery %>
-<% include InteriorEventList %>
+<% include RelatedNewsInitiative %>
 <% include Enroll %>

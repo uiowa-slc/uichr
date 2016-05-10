@@ -1,23 +1,28 @@
 <?php
-class StaffHolderPage extends Page {
+class Initiative extends Page {
 
 	private static $db = array(
+
 	);
 
 	private static $has_one = array(
-	);
-	private static $allowed_children = array(
-		'StaffMember'
+		"PagePhoto" => "Image"
 	);
 
 	public function getCMSFields(){
 		$fields = parent::getCMSFields();
+
+		// $fields->removeByName("Content");
+		$fields->removeByName("Metadata");
+
+		$fields->addFieldToTab("Root.Main", new UploadField("PagePhoto", "Header Photo (width:1200px, height: 500px)"));
+
 		return $fields;
 
 	}
 
 }
-class StaffHolderPage_Controller extends Page_Controller {
+class Initiative_Controller extends Page_Controller {
 
 	/**
 	 * An array of actions that can be accessed via a request. Each array element should be an action name, and the

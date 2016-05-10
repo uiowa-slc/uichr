@@ -52,8 +52,7 @@ class NewsEntry_Controller extends BlogPost_Controller {
 	);
 
 	public function RelatedNewsEntries(){
-		//Commenting these out for now until I can update this for blog 2.0
-	/*	$holder = NewsHolder::get()->First();
+		$holder = NewsHolder::get()->First();
 		$tags = $this->TagsCollection()->sort('Date', 'ASC')->limit(6);
 		$entries = new ArrayList();
 
@@ -72,7 +71,7 @@ class NewsEntry_Controller extends BlogPost_Controller {
 		if($entries->count() > 1){
 			$entries->removeDuplicates();
 		}
-		return $entries;*/
+		return $entries;
 	}
 
 	public function init() {

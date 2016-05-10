@@ -1,17 +1,17 @@
-<% include HeaderPhoto %>
-<main class="container main" role="main">
+<div class="container">
 	<div class="row">
 
 		<!-- Main Content -->
-		<div class="<% if $Children || $Parent %>col-lg-9 col-lg-push-3 children<% else %>col-md-10 col-md-offset-1<% end_if %>">
-			<article id="main-content" class="clearfix newsentry" tabindex="-1">
+		<div class="col-sm-12">
+			<div class="article newsentry">
+				$Breadcrumbs
 				<h1 class="entry-title">$Title</h1>
 				<p class="entry-date">
-					Posted on <time datetime="$PublishDate.format(c)" itemprop="datePublished">$PublishDate.format(F d Y)</time>
+					Posted on <time datetime="$Date.format(c)" itemprop="datePublished">$Date.format(F d Y)</time>
 				</p>
 				<hr />
-				<% if $FeaturedImage %>
-					<img src="$FeaturedImage.SetWidth(400).URL" alt="" class="right entryphoto">
+				<% if $Photo %>
+					<img src="$Photo.SetWidth(400).URL" alt="" class="right entryphoto">
 				<% end_if %>
 
 				$Content
@@ -27,18 +27,27 @@
 					</div>
 				<% end_if %>
 
-			</article>
-		</div><!-- end .col -->
 
-		<!-- Side Bar -->
-		<% if $Children || $Parent %><%--Determine if Side Nav should be rendered, you can change this logic --%>
-			<div class="col-lg-3  col-lg-pull-9 sidebar">
-				<% include SideNav %>
-				<% include Testimonial %>
 			</div>
-		<% end_if %>
+		</div><!-- end .col -->
 	</div><!-- end .row -->
-</main><!-- end .container -->
-<% include PhotoGallery %>
-<% include InteriorEventList %>
-<% include Enroll %>
+
+</div><!-- end .container -->
+
+<!-- Show news articles with similar tags -->
+<% if $RelatedNewsEntries %>
+<div class="relatednews">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<aside>
+					<h2>Related News</h2>
+					<% loop $RelatedNewsEntries(3) %>
+						<% include RelatedNewsContent %>
+					<% end_loop %>
+				</aside>
+			</div>
+		</div>
+	</div>
+</div>
+<% end_if %><!-- end related news -->

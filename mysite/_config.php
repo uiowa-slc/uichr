@@ -8,8 +8,8 @@ $database = 'uichr';
 
 require_once("conf/ConfigureFromEnv.php");
 
-Calendar::add_extension('CalendarExtension');
-CalendarEvent::add_extension('CalendarEventExtension');
+// Calendar::add_extension('CalendarExtension');
+// CalendarEvent::add_extension('CalendarEventExtension');
 
 MySQLDatabase::set_connection_charset('utf8');
 
