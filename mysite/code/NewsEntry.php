@@ -25,6 +25,7 @@ class NewsEntry extends BlogPost {
 		$fields->removeByName("PhotoGallery");
 		$fields->removeByName("Widgets");
 		$fields->removeByName("BackgroundPhoto");
+		$fields->removeByName("PageTags");
 
 		return $fields;
 	}
@@ -53,11 +54,11 @@ class NewsEntry_Controller extends BlogPost_Controller {
 
 	public function RelatedNewsEntries(){
 		$holder = NewsHolder::get()->First();
-		$tags = $this->TagsCollection()->sort('Date', 'ASC')->limit(6);
+		$tags = $this->Tags()->limit(6);
 		$entries = new ArrayList();
 
 		foreach($tags as $tag){
-			$taggedEntries = $holder->Entries(5, $tag->Tag)->exclude(array("ID"=>$this->ID))->sort('Date', 'ASC')->First();
+			$taggedEntries = $tag->BlogPosts()->exclude(array("ID"=>$this->ID))->sort('PublishDate', 'ASC')->Limit(3);
 			if($taggedEntries){
 				foreach($taggedEntries as $taggedEntry){
 					if($taggedEntry->ID){

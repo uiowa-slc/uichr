@@ -22,6 +22,22 @@
 		<% end_if %>
 	</div><!-- end .row -->
 </main><!-- end .container -->
+<!-- Show news articles with similar tags -->
+<% if $RelatedNewsEntries %>
+<div class="relatednews">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<aside>
+					<h2>Related News</h2>
+					<% loop $RelatedNewsEntries(3) %>
+						<% include RelatedNewsContent %>
+					<% end_loop %>
+				</aside>
+			</div>
+		</div>
+	</div>
+</div>
+<% end_if %><!-- end related news -->
 <% include PhotoGallery %>
-<% include InteriorEventList %>
 <% include Enroll %>

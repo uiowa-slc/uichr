@@ -8,12 +8,25 @@ class Page extends SiteTree {
 	private static $has_one = array(
 
 	);
+	private static $many_many = array(
+		'PageTags' => 'BlogTag',
+	);
 
-	public function getCMSFields(){
+	public function getCMSFields() {
 		$fields = parent::getCMSFields();
 
 		$fields->removeByName("ExtraMeta");
 
+		$tags = BlogTag::get();
+		$tagField = TagField::create(
+			'PageTags',
+			'Tags',
+			$tags,
+			$this->PageTags()
+		)
+			->setCanCreate(true)
+			->setShouldLazyLoad(true);
+		$fields->addFieldToTab('Root.Main', $tagField, 'Content');
 		return $fields;
 
 	}
@@ -36,9 +49,30 @@ class Page_Controller extends ContentController {
 	 *
 	 * @var array
 	 */
-	private static $allowed_actions = array (
+	private static $allowed_actions = array(
 	);
+	public function RelatedNewsEntries(){
+		$holder = NewsHolder::get()->First();
+		$tags = $this->PageTags()->limit(6);
+		$entries = new ArrayList();
 
+		foreach($tags as $tag){
+			$taggedEntries = $tag->BlogPosts()->exclude(array("ID"=>$this->ID))->sort('PublishDate', 'ASC')->Limit(3);
+			if($taggedEntries){
+				foreach($taggedEntries as $taggedEntry){
+					if($taggedEntry->ID){
+						$entries->push($taggedEntry);
+					}
+				}
+			}
+
+		}
+
+		if($entries->count() > 1){
+			$entries->removeDuplicates();
+		}
+		return $entries;
+	}
 	public function init() {
 		parent::init();
 		// You can include any CSS or JS required by your project here.
