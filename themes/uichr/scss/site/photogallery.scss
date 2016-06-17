@@ -1,8 +1,11 @@
-.photo-gallery-header {
+.photogallery {
 	background: #222;
 	color: #fff;
 	text-align: center;
+}
+.photogallery-header {
 	padding: 1.5em 0;
+	color: #fff;
 	& h4 {
 		color: #888;
 		text-transform: uppercase;
@@ -21,15 +24,15 @@
 		font-size: 26px;
 	}
 }
-.photo-gallery {
-	background: #222;
-	color: #fff;
-	text-align: center;
+.photogallery-flickity {
 	@media (min-width: $break-small) {
 		padding-bottom: 1em;
 	}
 }
-.photo-gallery .gallery-cell {
+
+/* changes size of images
+----------------------------------------------------*/
+.photogallery-flickity .gallery-cell {
 	width: 100%;
 	@media (min-width: $break-small) {
 		width: 66%;
@@ -37,43 +40,47 @@
 	@media (min-width: $break-large) {
 		width: 900px;
 	}
-
 }
-.photo-gallery .gallery-cell .scale {
+
+/* scales images and adds transition */
+.photogallery-flickity .gallery-cell .scale {
 	-webkit-transition: all 1s ease-in-out;
 	transition: all 1s ease-in-out;
 	opacity: .30;
 	transform: scale(0.88);
 }
-.photo-gallery .gallery-cell img {
-	display: block;
-	width: 100%;
-}
-.photo-gallery .gallery-cell.is-selected {
-	z-index: 50;
-}
-.photo-gallery .gallery-cell.is-selected .scale  {
+.photogallery-flickity .gallery-cell.is-selected .scale  {
 	opacity: 1;
 	transform: scale(1);
 }
 
-/* prev next buttons */
-.photo-gallery .flickity-prev-next-button {
+.photogallery-flickity .gallery-cell img {
+	display: block;
+	width: 100%;
+}
+.photogallery-flickity .gallery-cell.is-selected {
+	z-index: 50;
+}
+
+/* flickity prev next buttons
+----------------------------------------------------*/
+.photogallery-flickity .flickity-prev-next-button {
 	border-radius: 0;
 	background: $link;
 }
-.photo-gallery .flickity-prev-next-button .arrow {
+.photogallery-flickity .flickity-prev-next-button .arrow {
 		fill: #fff;
 }
-.photo-gallery .flickity-prev-next-button.next {
+.photogallery-flickity .flickity-prev-next-button.next {
 		right: 0;
 }
-.photo-gallery .flickity-prev-next-button.previous {
+.photogallery-flickity .flickity-prev-next-button.previous {
 		left: 0;
 }
 
-/* caption */
-.photo-caption {
+/* image caption
+----------------------------------------------------*/
+.photogallery-caption {
 	position: absolute;
 	left: 0;
 	bottom: 0;
@@ -92,7 +99,7 @@
 	-o-transform: translateY(100%);
 	transform: translateY(100%);
 }
-.photo-gallery .gallery-cell.is-selected .photo-caption {
+.photogallery-flickity .gallery-cell.is-selected .photogallery-caption {
 	opacity: 1;
 	-webkit-transform: translateY(0);
 	-moz-transform: translateY(0);

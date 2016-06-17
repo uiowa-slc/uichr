@@ -6,7 +6,7 @@ class NewsHolder extends Blog {
 	);
 
 	private static $has_one = array(
-
+		"MyWidgetArea" => "WidgetArea",
 	);
 	private static $belongs_many_many = array (
 	);
@@ -25,7 +25,8 @@ class NewsHolder extends Blog {
 
 	public function getCMSFields(){
 		$fields = parent::getCMSFields();
-		$fields->removeByName("Testimonial");
+		$fields->removeByName("PageSummary");
+		$fields->addFieldToTab("Root.Widgets", new WidgetAreaEditor("MyWidgetArea"));
 		return $fields;
 	}
 

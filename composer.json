@@ -12,6 +12,7 @@
 		"jonom/silverstripe-betternavigator" : "*",
 		"jonom/focuspoint" : "*",
 		"silverstripe/blog" : "2.*",
+		"silverstripe/widgets": "*",
 		"colymba/gridfield-bulk-editing-tools" : "*",
 		"md/division-bar" : "*",
 		"undefinedoffset/sortablegridfield": "*"

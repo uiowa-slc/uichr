@@ -3,3 +3,9 @@ SiteTree:
     - MetaTitleExtension
 MetaTitleExtension:
   InsertBefore: 'MetaDescription'
+NewsHolder:
+    extensions:
+      - WidgetPageExtension
+Page:
+    extensions:
+      - WidgetPageExtension

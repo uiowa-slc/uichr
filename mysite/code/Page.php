@@ -2,11 +2,12 @@
 class Page extends SiteTree {
 
 	private static $db = array(
-
+		"PageSummary" => "Text",
 	);
 
 	private static $has_one = array(
-
+		"MainPhoto" => "Image",
+		"PageSummaryImg" => "Image",
 	);
 	private static $many_many = array(
 		'PageTags' => 'BlogTag',
@@ -16,6 +17,9 @@ class Page extends SiteTree {
 		$fields = parent::getCMSFields();
 
 		$fields->removeByName("ExtraMeta");
+		$fields->addFieldToTab("Root.Main", new UploadField("MainPhoto", "Page Photo (optional)"), "Content");
+		$fields->addFieldToTab('Root.PageSummary', new TextareaField('PageSummary', 'Page Description'));
+		$fields->addFieldToTab("Root.PageSummary", new UploadField("PageSummaryImg", "Page Summary Photo"));
 
 		$tags = BlogTag::get();
 		$tagField = TagField::create(
@@ -73,6 +77,11 @@ class Page_Controller extends ContentController {
 		}
 		return $entries;
 	}
+
+	public function RandomChildren($count = 2) {
+		return SiteTree::get()->filter('ParentID', $this->ID)->sort('RAND()')->limit($count);
+	}
+
 	public function init() {
 		parent::init();
 		// You can include any CSS or JS required by your project here.

@@ -6,9 +6,9 @@
 		padding: 3em 0;
 	}
 }
-
-.enroll-link {
+.enroll-btn {
 	background-color: #000;
+	border-radius: 3px;
 	display: block;
 	margin: 0 auto;
 	margin-bottom: 2em;
@@ -22,7 +22,7 @@
 	transition: .1s ease-in-out;
 	&:hover, &:focus {
 		color: #fff;
-		background-color: #222;
+		background-color: #444;
 	}
 }
 .enroll-heading {
@@ -33,15 +33,21 @@
 		font-size: 16px;
 	}
 	@media (min-width: $break-small) {
-		font-size: 26px;
+		font-size: 25px;
 	}
 }
-.testimonials {
+
+/* Testimonial
+----------------------------------------------------*/
+.enroll-testimonial {
+	border: none;
+	margin: 0;
+	padding: 0;
 	@media (max-width: $break-medium - 1) {
 		margin-top: 2em;
 	}
 }
-.testimonials .quote {
+.enroll-testimonial .quote {
 	font-size: 20px;
 	margin-top: 0;
 	line-height: 1.5;
@@ -51,14 +57,14 @@
 		font-size: 23px;
 	}
 }
-.testimonials .cite {
+.enroll-testimonial .cite {
 	color: #000;
+	font-style: normal;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	margin: 0;
 	& em {
 		text-transform: none;
-		font-style: italic;
 		font-size: 16px;
 		font-family: $heading-font;
 		display: block;
@@ -67,11 +73,3 @@
 		letter-spacing: 0;
 	}
 }
-
-
-
-
-
-
-
-

@@ -2,18 +2,18 @@
 <% if $Children %>
 	<br />
 	<% loop $Children %>
-		<section class="child-block <% if $SummaryPhoto %>withphoto<% end_if %>">
+		<section class="child-block <% if $PageSummaryImg %>withphoto<% end_if %>">
 			<a href="$Link" class="blocklink">
-				<% if $SummaryPhoto %>
-					<img src="$SummaryPhoto.CroppedImage(280,250).URL" alt="$Title" class="child-block-img">
+				<% if $PageSummaryImg %>
+					<img src="$PageSummaryImg.CroppedImage(250,225).URL" alt="" class="child-block-img">
 				<% end_if %>
 				<div class="child-block-content">
 					<h3 class="title">$Title</h3>
-					<% if $Summary %>
-						<p>$Summary.LimitCharacters(120)</p>
+					<% if $PageSummary %>
+						<p>$PageSummary.LimitCharacters(180)</p>
 						<span class="link">Learn More</span>
 					<% else %>
-						<p>$Content.LimitCharacters(120)</p>
+						<p>$Content.LimitCharacters(180)</p>
 						<span class="link">Learn More</span>
 					<% end_if %>
 				</div>

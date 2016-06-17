@@ -1,39 +1,36 @@
-<% include HeaderPhoto %>
-<main class="container main" role="main">
-	<div class="row">
-
-		<!-- Main Content -->
-		<div class="col-md-10 col-md-offset-1">
-			<section id="main-content" tabindex="-1">
-				<h1>$Title</h1>
-
-				<% if $Query %>
-					<p class="searchQuery">You searched for &quot;{$Query}&quot;</p>
+<main class="main" role="main">
+	<header class="page-header">
+		<div class="container">
+			<h1 class="page-title">$Title</h1>
+			<% if $ClassName != "HomePage" %>$Breadcrumbs<% end_if %>
+		</div>
+	</header>
+	<section class="container page-content">
+		<div class="row">
+			<!-- Main Content -->
+			<h3 id="main-content" class="sr-only" tabindex="-1">Main Content</h3>
+			<div class="<% if $Children || $Parent %>col-lg-8 children<% else %>col-md-10 col-md-offset-1<% end_if %>">
+					<% if $Query %>
+					<p class="searchQuery">You searched for <strong>&quot;{$Query}&quot;</strong></p>
 				<% end_if %>
 
 				<% if $Results %>
 				<ul id="SearchResults">
 					<% loop $Results %>
 					<li class="clearfix">
-						<p class="search-type">$NiceName</p>
-						<h4>
-							<a href="$Link">
+						<p><strong class="results-title"><a href="$Link">
 								<% if $MenuTitle %>
 								$MenuTitle
 								<% else %>
 								$Title
 								<% end_if %>
-							</a>
-						</h4>
+							</a></strong>
+						<br>
 						<% if $Content %>
-							<p>$Content.LimitWordCountXML</p>
+							$Content.LimitWordCountXML
 						<% end_if %>
-						<% if $ArtworkText %>
-							<p>$ArtworkText.LimitWordCountXML</p>
-						<% end_if %>
-						<% if $ExhibitionDescription %>
-							<p>$ExhibitionDescription.LimitWordCountXML</p>
-						<% end_if %>
+						</p>
+						<div class="results-url">$AbsoluteLink</div>
 
 
 						<!-- <a class="readMoreLink" href="$Link" title="Read more about &quot;{$Title}&quot;">Read more about &quot;{$Title}&quot;...</a> -->
@@ -73,10 +70,12 @@
 					<p>Page $Results.CurrentPage of $Results.TotalPages</p>
 				</div>
 				<% end_if %>
-			</section>
-		</div>
-	</div>
-</main>
+			</div><!-- end .col -->
 
-<% include InteriorEventList %>
-<% include Enroll %>
+			<!-- Side Bar -->
+			<% if $Children || $Parent %><%--Determine if Side Nav should be rendered, you can change this logic --%>
+				<% include SideBar %>
+			<% end_if %>
+		</div><!-- end .row -->
+	</section>
+</main><!-- end .container -->

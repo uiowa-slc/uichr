@@ -4,45 +4,42 @@
 
 /* Global Settings
 -------------------------------------------*/
-@import "global/mixins";
 @import "global/normalize";
 @import "global/typography";
 @import "global/global";
 
 /* Element Imports
 -------------------------------------------*/
-/*@import "elements/button-bootstrap";*/
-/*@import "elements/form-bootstrap";*/
 @import "elements/grid-bootstrap";
-@import "elements/nav-bootstrap";
+@import "elements/button-bootstrap";
 @import "elements/tables";
+@import "elements/skip-link";
 
 
 /* Division Bar
 -------------------------------------------*/
-@import "../../../division-bar/scss/_uiowa-bar-bootstrap.scss";
+// @import "../../../division-bar/scss/_uiowa-bar-bootstrap.scss";
 
 /* Plugins
 -------------------------------------------*/
-@import "plugins/flickity";
+// @import "plugins/flickity";
 
 
 /* Layout
 -------------------------------------------*/
 @import "site/childpages";
-@import "site/photogallery";
-@import "site/eventlist";
-@import "site/staff";
-@import "site/enroll";
-@import "site/searchresults";
-@import "site/sidebaritem";
+// @import "site/photogallery";
+@import "site/calendar";
 @import "site/news";
+@import "site/staff";
+// @import "site/relatednews";
+@import "site/initiatives";
+@import "site/searchresults";
 @import "site/homepage";
 @import "site/header";
 @import "site/footer";
 @import "site/sidenav";
-// @import "site/mainnav";
-@import "site/megamenu";
+@import "site/mainnav";
 @import "site/mobilenav";
 @import "site/breadcrumbs";
 @import "site/pagination";
@@ -54,3 +51,4 @@
 /* Print
 -------------------------------------------*/
 @import "site/print";
+

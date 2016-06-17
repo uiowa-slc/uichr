@@ -1,43 +1,59 @@
-<% include HeaderPhoto %>
-<main class="container main" role="main">
+<main class="main" role="main">
+	<header class="page-header">
+		<div class="container">
+			<h1 class="page-title">$Title</h1>
+			<% if $ClassName != "HomePage" %>$Breadcrumbs<% end_if %>
+			<% include HeaderPhoto %>
+		</div>
+	</header>
+	<section class="container page-content">
+		<div class="row">
+			<!-- Main Content -->
+			<h3 id="main-content" class="sr-only" tabindex="-1">Main Content</h3>
+			<div class="content <% if $Children || $Parent %>col-lg-8 children<% else %>col-md-10 col-md-offset-1<% end_if %>">
 
-	<div class="row">
-
-		<!-- Main Content -->
-		<div class="<% if $Children || $Parent %>col-lg-9 col-lg-push-3 children<% else %>col-md-10 col-md-offset-1<% end_if %>">
-			<section id="main-content" tabindex="-1">
-				<h1>$Title</h1>
 				$Content
 				$Form
-			</section>
-			<% include ChildPages %>
-		</div><!-- end .col -->
+				<%-- <% include ChildPages %> --%>
+			</div><!-- end .col -->
 
-		<!-- Side Bar -->
-		<% if $Children || $Parent %><%--Determine if Side Nav should be rendered, you can change this logic --%>
-			<div class="col-lg-3  col-lg-pull-9 sidebar">
-				<% include SideNav %>
-				<% include Testimonial %>
-			</div>
-		<% end_if %>
-	</div><!-- end .row -->
+			<!-- Side Bar -->
+			<% if $Children || $Parent %><%--Determine if Side Nav should be rendered, you can change this logic --%>
+				<% include SideBar %>
+			<% end_if %>
+		</div><!-- end .row -->
+	</section>
 </main><!-- end .container -->
-<!-- Show news articles with similar tags -->
-<% if $RelatedNewsEntries %>
-<div class="relatednews">
+<%-- Show random initiative pages --%>
+<div class="initiatives">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<aside>
-					<h2>Related News</h2>
-					<% loop $RelatedNewsEntries(3) %>
-						<% include RelatedNewsContent %>
+				<h2 class="text-center">More Initiatives</h2>
+
+					<ul class="justify justify-3">
+					<% loop $RandomChildren(3) %>
+						<li class="justify-item">
+							<a href="$Link" class="initiative-block">
+								<div class="initiative-img">
+									<div class="scale" style="background-image: url($PageSummaryImg.CroppedImage(330,225).URL);"></div>
+								</div>
+								<div class="initiative-body">
+									$Title
+								</div>
+							</a>
+						</li>
 					<% end_loop %>
-				</aside>
+						<li class="justify-item justify-filler"></li>
+					</ul>
+
 			</div>
 		</div>
 	</div>
 </div>
-<% end_if %><!-- end related news -->
-<% include PhotoGallery %>
-<% include Enroll %>
+
+
+
+
+
+

@@ -1,53 +1,49 @@
-<div class="container">
-	<div class="row">
+<main class="main" role="main">
+	<header class="page-header">
+		<div class="container">
+			<h1 class="page-title">$Title</h1>
+			<% if $ClassName != "HomePage" %>$Breadcrumbs<% end_if %>
+			<% include HeaderPhoto %>
+		</div>
+	</header>
+	<section class="container page-content">
+		<div class="row">
+			<!-- Main Content -->
+			<h3 id="main-content" class="sr-only" tabindex="-1">Main Content</h3>
+			<div class="col-md-12">
 
-		<!-- Main Content -->
-		<div class="col-sm-12">
-			<div class="article newsentry">
-				$Breadcrumbs
-				<h1 class="entry-title">$Title</h1>
-				<p class="entry-date">
-					Posted on <time datetime="$Date.format(c)" itemprop="datePublished">$Date.format(F d Y)</time>
-				</p>
-				<hr />
-				<% if $Photo %>
-					<img src="$Photo.SetWidth(400).URL" alt="" class="right entryphoto">
+				<% if $FeaturedImage %>
+					<img src="$FeaturedImage.SetWidth(350).URL" alt="" class="right entryphoto">
 				<% end_if %>
 
 				$Content
 				$Form
 
-				<!-- Show Tags -->
-				<% if TagsCollection %>
-					<div class="tags">
-						<% _t('BlogSummary_ss.TAGS','Tags') %>:
-						<% loop TagsCollection %>
-							<a href="$Link" title="View all posts tagged '$Tag'" rel="tag">$Tag</a><% if not Last %>,<% end_if %>
+				<hr>
+				<p class="entry-meta">
+					<% if $Credits %>
+						<span class="author">by
+						<% loop $Credits %><% if not $First && not $Last %>, <% end_if %><% if not $First && $Last %> and <% end_if %><% if $URLSegment %><a href="$URL">$Name.XML</a><% else %>$Name.XML<% end_if %><% end_loop %> <span class="bar">|</span> </span>
+					<% end_if %>
+					<span class="date">$PublishDate.format("F d, Y")</span>
+					<% if $Categories.exists %>
+						<span class="bar">|</span>
+						<% loop $Categories %>
+							<a href="$Link" title="$Title">$Title</a><% if not Last %>, <% else %><% end_if %>
 						<% end_loop %>
-					</div>
-				<% end_if %>
+					<% end_if %>
 
+					<% if $Tags.exists %>
+						<span class="bar">|</span> Tagged:
+						<% loop $Tags %>
+							<a href="$Link" title="$Title">$Title</a><% if not Last %>, <% else %><% end_if %>
+						<% end_loop %>
+					<% end_if %>
+				</p>
 
-			</div>
-		</div><!-- end .col -->
-	</div><!-- end .row -->
+			</div><!-- end .col -->
+		</div><!-- end .row -->
+	</section>
 
-</div><!-- end .container -->
-
-<!-- Show news articles with similar tags -->
-<% if $RelatedNewsEntries %>
-<div class="relatednews">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12">
-				<aside>
-					<h2>Related News</h2>
-					<% loop $RelatedNewsEntries(3) %>
-						<% include RelatedNewsContent %>
-					<% end_loop %>
-				</aside>
-			</div>
-		</div>
-	</div>
-</div>
-<% end_if %><!-- end related news -->
+</main><!-- end .container -->
+<% include RelatedNewsEntries %>

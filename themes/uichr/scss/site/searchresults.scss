@@ -4,27 +4,16 @@
 	padding: 0;
 	& li {
 		border-bottom: 1px solid #ddd;
-		padding: 10px;
+		padding: 0 1em 1em;
 	}
 	& li:first-of-type {
 		border-top: 1px solid #ddd;
 	}
 	& li:nth-child(even) {
-		background-color: #f4f4f4;
+		background-color: #fafafa;
 	}
-	& li p {
-		font-size: 15px;
-		margin-bottom: 0;
-	}
-	& h4 {
-		margin-top: 5px;
-	}
-	& img {
-		@media (min-width: $break-small) {
-			float: left;
-			margin-right: 1em;
-		}
-
+	.results-title {
+		font-size: 110%;
 	}
 }
 #PageNumbers {
@@ -37,4 +26,7 @@
 	text-transform: uppercase;
 	margin: 0;
 	font-size: 14px;
+}
+.results-url {
+	font-size: 80%;
 }

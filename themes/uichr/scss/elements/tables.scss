@@ -1,6 +1,8 @@
 table {
   max-width: 100%;
   background-color: transparent;
+  border-spacing: 0;
+  border-collapse: collapse;
 }
 th {
   text-align: left;
@@ -15,14 +17,15 @@ table tfoot > tr > th,
 table thead > tr > td,
 table tbody > tr > td,
 table tfoot > tr > td {
-  padding: 8px;
+  font-size: 90%;
+  padding: 10px;
   line-height: 1.428571429;
   vertical-align: top;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #ddd;
 }
 table thead > tr > th {
   vertical-align: bottom;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid #ddd;
 }
 table caption + thead tr:first-child th,
 table colgroup + thead tr:first-child th,
@@ -33,7 +36,7 @@ table thead:first-child tr:first-child td {
   border-top: 0;
 }
 table tbody + tbody {
-  border-top: 2px solid #ccc;
+  border-top: 2px solid #ddd;
 }
 table table {
   background-color: #ffffff;
@@ -47,7 +50,7 @@ table table {
   padding: 4px;
 }
 .table-bordered {
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
 }
 .table-bordered > thead > tr > th,
 .table-bordered > tbody > tr > th,
@@ -55,7 +58,7 @@ table table {
 .table-bordered > thead > tr > td,
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > td {
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
 }
 .table-bordered > thead > tr > th,
 .table-bordered > thead > tr > td {
@@ -81,7 +84,7 @@ table th[class*="col-"] {
     margin-bottom: 15px;
     overflow-y: hidden;
     overflow-x: scroll;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
   }
   .table-responsive > .table {
     margin-bottom: 0;
