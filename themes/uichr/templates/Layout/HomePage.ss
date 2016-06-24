@@ -39,7 +39,7 @@
 					</ol>
 					<div class="hero-overview">
 						<p class="hero-overview-copy">The Human Rights Certificate Program seeks to broaden understanding of human rights issues and to identify solutions to them on an interdisciplinary basis. Labore et dolore magna aliqua enim ad minim veniam.</p>
-						<a href="#" class="hero-overview-link"><strong>Program Overview</strong></a>
+						<a href="#" class="hero-overview-link"><span class="link">Program Overview</span></a>
 					</div>
 				</div>
 			</div>
@@ -52,85 +52,54 @@
 		<div class="col-sm-12">
 			<div class="program-intro clearfix">
 				<h3>Protecting Human Rights at home and abroad</h3>
-				<p>The UICHR hosts diverse collaborative and innovative events and programs, reaching the UI community, the state of Iowa, and beyond. The center collaborates with community organizations and UI departments, scholars, and student groups. UICHR’s publicly engaged programs and initiatives include:</p>
+				$Content
 			</div>
-			<div class="program-list">
-				<ul class="unstyled justify justify-3">
-					<li class="justify-item">
-						<a href="#">
-							<div class="program-top">
-								<img src="{$ThemeDir}/images/onecommunity-onebook.jpg">
-								<h4>One Community, One Book</h4>
-							</div>
-							<div class="program-bot">
-								<p>A community reading initiative that features a new book each year that highlights a human rights concern.</p>
-								<span>&rsaquo;</span>
-							</div>
-						</a>
-					</li>
-					<li class="justify-item">
-						<a href="#">
-							<div class="program-top">
-								<img src="{$ThemeDir}/images/onecommunity-onebook.jpg">
-								<h4>Working Groups</h4>
-							</div>
-							<div class="program-bot">
-								<p>A community reading initiative that features a new book each year that highlights a human rights concern.</p>
-								<span>&rsaquo;</span>
-							</div>
-						</a>
-					</li>
-					<li class="justify-item">
-						<a href="#">
-							<div class="program-top">
-								<img src="{$ThemeDir}/images/onecommunity-onebook.jpg">
-								<h4>International Legal Clinic</h4>
-							</div>
-							<div class="program-bot">
-								<p>A community reading initiative that features a new book each year that highlights a human rights concern.</p>
-								<span>&rsaquo;</span>
-							</div>
-						</a>
-					</li>
-					<li class="justify-item">
-						<a href="#">
-							<div class="program-top">
-								<img src="{$ThemeDir}/images/onecommunity-onebook.jpg">
-								<h4>International Legal Clinic</h4>
-							</div>
-							<div class="program-bot">
-								<p>A community reading initiative that features a new book each year that highlights a human rights concern.</p>
-								<span>&rsaquo;</span>
-							</div>
-						</a>
-					</li>
-					<li class="justify-item">
-						<a href="#">
-							<div class="program-top">
-								<img src="{$ThemeDir}/images/onecommunity-onebook.jpg">
-								<h4>International Legal Clinic</h4>
-							</div>
-							<div class="program-bot">
-								<p>A community reading initiative that features a new book each year that highlights a human rights concern.</p>
-								<span>&rsaquo;</span>
-							</div>
-						</a>
-					</li>
-					<li class="justify-item">
-						<a href="#">
-							<div class="program-top">
-								<img src="{$ThemeDir}/images/onecommunity-onebook.jpg">
-								<h4>International Legal Clinic</h4>
-							</div>
-							<div class="program-bot">
-								<p>A community reading initiative that features a new book each year that highlights a human rights concern.</p>
-								<span>&rsaquo;</span>
-							</div>
-						</a>
-					</li>
-					<li class="justify-item filler"></li>
-				</ul>
+			<div class="text-container">
+				<div class="program-list">
+					<ul class="unstyled justify justify-3">
+						<% loop $Programs.Limit(3) %>
+							<li class="justify-item">
+								<a href="$AssociatedPage.Link">
+									<div class="program-top">
+										<div class="initiative-img">
+											<div class="scale" style="background-image: url($ProgramPhoto.CroppedImage(330,225).URL);"></div>
+											<h4>$ProgramTitle</h4>
+										</div>
+									</div>
+									<div class="program-bot">
+										<p>$ProgramDescription.LimitCharacters(90)</p>
+										<span class="diamond"></span>
+									</div>
+								</a>
+							</li>
+						<% end_loop %>
+					</ul>
+				</div>
+				<div class="more-programs">
+					<div class="program-list">
+						<ul class="unstyled justify justify-3">
+							<% loop $Programs.Limit(8,3) %>
+								<li class="justify-item">
+									<a href="$AssociatedPage.Link">
+										<div class="program-top">
+											<div class="initiative-img">
+												<div class="scale" style="background-image: url($ProgramPhoto.CroppedImage(330,225).URL);"></div>
+												<h4>$ProgramTitle</h4>
+											</div>
+										</div>
+										<div class="program-bot">
+											<p>$ProgramDescription.LimitCharacters(90)</p>
+											<span class="diamond"></span>
+										</div>
+									</a>
+								</li>
+							<% end_loop %>
+						</ul>
+					</div>
+				</div>
+				<p class="text-center" style="margin: 0;"><a href="#" class="more-link btn btn-link"></a></p>
 			</div>
+
 		</div>
 	</div>
 </section>
@@ -140,10 +109,11 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div class="home-events">
-					<h3>UICHR Events</h3>
+					<h3>UICHR Events <a href="{$BaseHref}events/" class="btn btn-link btn-xs">view all events</a></h3>
 					<% with $Page(events) %>
 					<% loop $EventList.Limit(2) %>
-						<div class="clearfix">
+						<% include EventCard %>
+						<%-- <div class="clearfix">
 							<% loop $Dates %>
 								<p class="date-time">
 									<% with $StartDateTime %>
@@ -153,7 +123,7 @@
 							<% end_loop %>
 							<h4 class=""><a href="$Link">$Title</a></h4>
 							<p><% if $Venue %>$Venue.Title<% end_if %></p>
-						</div>
+						</div> --%>
 					<% end_loop %>
 					<% end_with %>
 				</div>
@@ -162,13 +132,28 @@
 				<div class="home-news">
 					<% with $Page(news) %>
 						<% if $AllChildren %>
-							<h3>UICHR News</h3>
+							<h3>UICHR News <a href="{$BaseHref}news/" class="btn btn-link btn-xs">view all news</a></h3>
 							<ul class="unstyled">
 								<% loop $BlogPosts.Limit(2) %>
-									<li>
-										<h4 class="title"><a href="$Link">$Title</a></h4>
-										<span class="date">$PublishDate.format(F d)</span>
-									</li>
+									<div class="newscard clearfix <% if $Photo %>withphoto<% end_if %>">
+										<%-- Title --%>
+										<h4 class="newscard-title"><a href="$Link">$Title</a></h4>
+
+										<%-- Meta --%>
+										<p class="newscard-meta">
+											<% if $Credits %>
+												<span class="author">by
+												<% loop $Credits %><% if not $First && not $Last %>, <% end_if %><% if not $First && $Last %> and <% end_if %><% if $URLSegment %><a href="$URL">$Name.XML</a><% else %>$Name.XML<% end_if %><% end_loop %> <span class="bar">|</span> </span>
+											<% end_if %>
+											<span class="date">$PublishDate.format("F d, Y")</span>
+											<% if $Categories.exists %>
+												<span class="bar">|</span>
+												<% loop $Categories %>
+													<a href="$Link" title="$Title">$Title</a><% if not Last %>, <% else %><% end_if %>
+												<% end_loop %>
+											<% end_if %>
+										</p>
+									</div>
 								<% end_loop %>
 							</ul>
 						<% end_if %>

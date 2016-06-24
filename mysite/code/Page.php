@@ -24,7 +24,7 @@ class Page extends SiteTree {
 		$tags = BlogTag::get();
 		$tagField = TagField::create(
 			'PageTags',
-			'Tags',
+			'Show news tagged with:',
 			$tags,
 			$this->PageTags()
 		)
@@ -33,6 +33,9 @@ class Page extends SiteTree {
 		$fields->addFieldToTab('Root.Main', $tagField, 'Content');
 		return $fields;
 
+	}
+	public function RandomChildren($count = 2) {
+		return SiteTree::get()->filter('ParentID', $this->ID)->sort('RAND()')->limit($count);
 	}
 
 }
@@ -78,9 +81,7 @@ class Page_Controller extends ContentController {
 		return $entries;
 	}
 
-	public function RandomChildren($count = 2) {
-		return SiteTree::get()->filter('ParentID', $this->ID)->sort('RAND()')->limit($count);
-	}
+
 
 	public function init() {
 		parent::init();

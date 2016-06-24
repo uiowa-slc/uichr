@@ -46,7 +46,7 @@
 
 		<p class="eventcard-btn">
 			<%-- <a href="$Link" class="btn btn-default">View Event</a> --%>
-			<a class="btn btn-default" href="$Link">View Event</a>
+			<a class="btn btn-default btn-sm" href="$Link">View Event</a>
 		</p>
 	</div>
 </div>

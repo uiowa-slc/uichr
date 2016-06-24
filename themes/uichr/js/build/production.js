@@ -223,6 +223,11 @@ function skipLink(el) {
 $(document).ready(function() {
 	skipLink('.skip-link');
 
+	$(".more-link").click(function(e){
+		$(this).closest(".text-container").toggleClass("show-more");
+		e.preventDefault();
+	});
+
 
 
 });

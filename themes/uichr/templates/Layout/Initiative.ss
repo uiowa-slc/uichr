@@ -25,7 +25,7 @@
 	</section>
 </main><!-- end .container -->
 <%-- Show random initiative pages --%>
-<div class="initiatives">
+<%-- <div class="initiatives">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
@@ -41,4 +41,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> --%>

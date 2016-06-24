@@ -19,7 +19,7 @@
 						<% if $SiteConfig.Email %>Email: <a href="mailto:$SiteConfig.Email">$SiteConfig.Email</a><% end_if %>
 					</p>
 				</div>
-				<div class="social">
+				<%-- <div class="social">
 					<ul class="unstyled">
 						<li>
 							<% if $SiteConfig.FacebookLink %>
@@ -32,7 +32,7 @@
 							<% end_if %>
 						</li>
 					</ul>
-				</div>
+				</div> --%>
 			</div>
 			<div class="col-md-6">
 				<div class="newsletter">

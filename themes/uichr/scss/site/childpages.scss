@@ -61,10 +61,6 @@ Child Page Summary
 .blocklink:focus .link {
 	border-color: $green;
 }
-
-
-
-
 .child-block .link:before {
     background: url(../images/chevronright.png) no-repeat 0 0;
     background-size: 90%;
@@ -94,12 +90,12 @@ Child Page Summary
     display: inline-block;
     text-align: center;
 }
-.blocklink:hover .link:after {
+.blocklink:hover .link:after,
+.blocklink:focus .link:after {
 	box-shadow: inset 0 0 0 18px $link;
 }
-
-
-.blocklink:hover .link:before {
+.blocklink:hover .link:before,
+.blocklink:focus .link:before {
 	background-position: 0 -14px;
 }
 
