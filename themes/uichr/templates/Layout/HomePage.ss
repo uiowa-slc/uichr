@@ -1,41 +1,41 @@
 <section class="hero">
-	<div class="hero-top" style="background-image: url({$ThemeDir}/images/hero-1.jpg)">
-		<%-- <img src="{$ThemeDir}/images/hero-1.jpg" alt="" class="hero-img"> --%>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-7">
-					<div class="hero-content">
-						<h1 class="hero-title">New Ideas for a changing world</h1>
-						<p class="hero-copy">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
-						<a href="#" class="hero-btn">Eligibility Requirements</a>
-					</div>
+
+	<div class="slider slider-for">
+	<% loop $Heros.Limit(3) %>
+		<div class="hero-top">
+			<div class="test">
+				<picture>
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source srcset="$HeroPhoto.CroppedFocusedImage(1600,700).URL" media="(min-width: 1200px)">
+					<source srcset="$HeroPhoto.CroppedFocusedImage(1200,800).URL" media="(min-width: 768px)">
+					<source srcset="$HeroPhoto.CroppedFocusedImage(768,500).URL" media="(min-width: 480px)">
+					<!--[if IE 9]></video><![endif]-->
+					<img srcset="$HeroPhoto.CroppedFocusedImage(480,300).URL" alt="$Title">
+				</picture>
+			</div>
+			<div class="container">
+				<div class="hero-content">
+					<h1 class="hero-title">$HeroTitle</h1>
+					<p class="hero-copy">$HeroDescription</p>
+					<% if $AssociatedPage %><a href="$AssociatedPage.Link" class="hero-btn">Learn More</a><% end_if %>
 				</div>
 			</div>
 		</div>
+	<% end_loop %>
 	</div>
 	<div class="hero-bot">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
-					<ol class="unstyled clearfix hero-nav">
-						<li>
-							<a href="#">
-								<img src="{$ThemeDir}/images/hero-nav1.jpg" alt="">
-								<strong>Certificate in Human Rights</strong>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="{$ThemeDir}/images/hero-nav2.jpg" alt="">
-								<strong>Student Internships</strong>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="{$ThemeDir}/images/hero-nav3.jpg" alt="">
-								<strong>Weston Essay Prize</strong>
-							</a>
-						</li>
+					<ol class="unstyled clearfix hero-nav slider-nav">
+						<% loop $Heros.Limit(3) %>
+							<li>
+								<div>
+									<div class="hero-nav-img"><img src="$HeroPhoto.CroppedFocusedImage(212,167).URL" alt=""></div>
+									<strong>$HeroTitle</strong>
+								</a>
+							</div>
+						<% end_loop %>
 					</ol>
 					<div class="hero-overview">
 						<p class="hero-overview-copy">The Human Rights Certificate Program seeks to broaden understanding of human rights issues and to identify solutions to them on an interdisciplinary basis. Labore et dolore magna aliqua enim ad minim veniam.</p>
@@ -137,7 +137,7 @@
 								<% loop $BlogPosts.Limit(2) %>
 									<div class="newscard clearfix <% if $Photo %>withphoto<% end_if %>">
 										<%-- Title --%>
-										<h4 class="newscard-title"><a href="$Link">$Title</a></h4>
+										<h5 class="newscard-title"><a href="$Link">$Title</a></h5>
 
 										<%-- Meta --%>
 										<p class="newscard-meta">

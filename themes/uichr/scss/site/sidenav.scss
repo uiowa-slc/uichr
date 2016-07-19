@@ -2,32 +2,47 @@
 Subnavigation
 --------------------------------------------------------------- */
 .subnavigation {
-margin-bottom: 3em;
+	padding: 1em;
+	margin-bottom: 3em;
+	@media (min-width: $break-large) {
+		padding: 0;
+	}
 }
 .subnavigation .section-title {
 	margin: 0;
-	padding-bottom: .5em;
+   font-size: 23px;
 	& a {
 		display: block;
 	}
+	@media (min-width: $break-large) {
+		font-size: 34px;
+		padding: 0 0 .5em 0;
+	}
 }
 .subnavigation .first-level {
-	border-left: 4px solid #eee;
+	@media (min-width: $break-large) {
+		border-left: 4px solid #eee;
+	}
 }
 .subnavigation li a {
-	border-left: 4px solid #eee;
 	background-color: transparent;
-	margin-left: -4px;
 	display: block;
 	font-size: 16px;
 	color: #666;
-	padding: 12px 20px;
-	text-transform: uppercase;
+	padding: 12px 0;
+	border-bottom: 1px solid #ddd;
 	transition: .2s ease-in-out;
 	&:hover, &:focus {
 		background-color: #f8f8f8;
 		border-left-color: $link;
 		color: $link;
+	}
+	@media (min-width: $break-large) {
+		border-bottom: none;
+		border-left: 4px solid #eee;
+		margin-left: -4px;
+		padding: 12px 20px;
+		text-transform: uppercase;
 	}
 }
 

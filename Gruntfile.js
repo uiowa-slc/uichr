@@ -18,8 +18,14 @@ module.exports = function(grunt) {
 		concat: {
 			dist: {
 				src: [
-					// 'division-bar/js/division-bar.js',
-					// '<%= project.src %>/js/plugins/flickity.pkgd.js',
+					'<%= project.src %>/js/plugins/core.js',
+					'<%= project.src %>/js/plugins/transition.js',
+					'<%= project.src %>/js/plugins/jquery.fs.shifter.js',
+					'<%= project.src %>/js/plugins/mediaquery.js',
+					'<%= project.src %>/js/plugins/navigation.js',
+					'<%= project.src %>/js/plugins/swap.js',
+					'<%= project.src %>/js/plugins/touch.js',
+					'<%= project.src %>/js/plugins/slick.js',
 					'<%= project.src %>/js/plugins/z-menubar.js',
 					'<%= project.src %>/js/main.js'
 				],
