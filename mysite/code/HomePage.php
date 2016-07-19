@@ -18,17 +18,19 @@ class HomePage extends Page {
 		$fields->removeByName("PageSummary");
 		$fields->removeByName("PageTags");
 
+		$fields->addFieldToTab("Root.Main", new HeaderField( '<br><h3>Carousel</h3>', '3', true ) );
+		$gridFieldConfig = GridFieldConfig_RelationEditor::create()->addComponents();
+		$gridFieldConfig->addComponent(new GridFieldSortableRows('SortOrder'));
+		$gridField = new GridField("Heros", "Carousel Items:", $this->Heros(), $gridFieldConfig);
+		$fields->addFieldToTab("Root.Main", $gridField);
+
 		$fields->addFieldToTab("Root.Main", new HeaderField( '<br><h3>Programs</h3>', '3', true ) );
 		$gridFieldConfig = GridFieldConfig_RelationEditor::create()->addComponents();
 		$gridFieldConfig->addComponent(new GridFieldSortableRows('SortOrder'));
 		$gridField = new GridField("Programs", "Programs:", $this->Programs(), $gridFieldConfig);
 		$fields->addFieldToTab("Root.Main", $gridField);
 
-		$fields->addFieldToTab("Root.Main", new HeaderField( '<br><h3>Carousel</h3>', '3', true ) );
-		$gridFieldConfig = GridFieldConfig_RelationEditor::create()->addComponents();
-		$gridFieldConfig->addComponent(new GridFieldSortableRows('SortOrder'));
-		$gridField = new GridField("Heros", "Carousel Items:", $this->Heros(), $gridFieldConfig);
-		$fields->addFieldToTab("Root.Main", $gridField);
+
 
 		return $fields;
 	}

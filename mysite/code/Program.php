@@ -22,14 +22,14 @@ class Program extends DataObject {
 
   private static $default_sort='SortOrder';
 
-  public function getCMSFields_forPopup() {
+  public function getCMSFields() {
 
     $thumbField = new UploadField('ProgramPhoto', 'Photo');
-    $thumbField = new TreeDropdownField('AssociatedPageID', 'Link to this page', 'SiteTree');
 
     return new FieldList(
       new TextField('ProgramTitle', 'Title'),
       new TextareaField('ProgramDescription', 'Description'),
+      new TreeDropdownField('AssociatedPageID', 'Link to this page', 'SiteTree'),
       $thumbField
     );
 

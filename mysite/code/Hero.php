@@ -22,14 +22,14 @@ class Hero extends DataObject {
 
   private static $default_sort='SortOrder';
 
-  public function getCMSFields_forPopup() {
+  public function getCMSFields() {
 
     $thumbField = new UploadField('HeroPhoto', 'Photo');
-    $thumbField = new TreeDropdownField('AssociatedPageID', 'Link to this page', 'SiteTree');
 
     return new FieldList(
       new TextField('HeroTitle', 'Title'),
       new TextareaField('HeroDescription', 'Description'),
+      new TreeDropdownField('AssociatedPageID', 'Link to this page', 'SiteTree'),
       $thumbField
     );
 
