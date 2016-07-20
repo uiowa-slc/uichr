@@ -15,7 +15,8 @@
 		"silverstripe/widgets": "*",
 		"colymba/gridfield-bulk-editing-tools" : "*",
 		"md/division-bar" : "*",
-		"undefinedoffset/sortablegridfield": "*"
+		"undefinedoffset/sortablegridfield": "*",
+		"silverstripe-australia/addressable": "^1.1"
 	},
 
 	"minimum-stability": "dev",

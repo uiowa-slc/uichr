@@ -9,3 +9,7 @@ NewsHolder:
 Page:
     extensions:
       - WidgetPageExtension
+Student:
+  extensions:
+    - Addressable
+    - Geocodable

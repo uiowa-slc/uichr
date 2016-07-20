@@ -50,3 +50,7 @@ reports/
 siteconfig/
 betternavigator/
 segment-field
+
+mysite/_config/keys.yml
+
+addressable/
