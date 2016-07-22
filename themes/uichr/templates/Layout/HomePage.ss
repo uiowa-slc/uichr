@@ -14,7 +14,7 @@
 				</picture>
 			</div>
 			<div class="container">
-				<div class="hero-content">
+				<div class="hero-content animated delay">
 					<h1 class="hero-title">$HeroTitle</h1>
 					<p class="hero-copy">$HeroDescription</p>
 					<% if $AssociatedPage %><a href="$AssociatedPage.Link" class="hero-btn">Learn More</a><% end_if %>
