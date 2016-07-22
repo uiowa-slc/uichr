@@ -21,6 +21,7 @@ module.exports = function(grunt) {
 					// 'division-bar/js/division-bar.js',
 					// '<%= project.src %>/js/plugins/flickity.pkgd.js',
 					'<%= project.src %>/js/plugins/z-menubar.js',
+					'<%= project.src %>/js/plugins/handlebars.min.js',
 					'<%= project.src %>/js/main.js'
 				],
 				dest: '<%= project.src %>/js/build/production.js'
