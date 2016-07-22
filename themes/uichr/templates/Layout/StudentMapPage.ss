@@ -16,7 +16,7 @@
 
 				<% loop $Students %>
 				<div class="students" data-name="$Name" data-title="$Title" data-internship="$Internship" data-internshiplink="$InternshipLink" data-content="$Content" <% if $Image %>data-image="$Image.URL"<% end_if %> data-lat="$Lat" data-lng="$Lng"> 
-				$InternshipLink
+				<%-- $InternshipLink --%>
 				</div>
 				<% end_loop %>
 

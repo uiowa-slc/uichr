@@ -437,9 +437,56 @@ this.pendingContent=void 0),a&&this.source.push(a)},replaceStack:function(a){var
 
 
 
+	// Shifter
+	$.shifter({
+		maxWidth: "979px"
+	});
 
+	// Naver
+	$(".subnavigation").navigation({
+		maxWidth: "979px"
+	});
 
+	// Slick
 
+	$('.slider-for').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: true,
+		fade: true,
+		asNavFor: '.slider-nav',
+		responsive: [
+	    {
+	      breakpoint: 768,
+	      settings: {
+				arrows: false,
+				dots: true,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				fade: false,
+				adaptiveHeight: true
+	      }
+	    },
+	    {
+	      breakpoint: 480,
+	      settings: {
+				arrows: false,
+				dots: true,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				fade: false,
+				adaptiveHeight: true
+	      }
+	    }
+	   ]
+	});
+	$('.slider-nav').slick({
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		asNavFor: '.slider-for',
+		dots: false,
+		focusOnSelect: true
+	});
 
 
 

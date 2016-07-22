@@ -58,12 +58,12 @@
 .initiative-img .scale {
 	height: 225px;
 	background-repeat: no-repeat;
-	transform: scale(1);
-	transition: all .25s cubic-bezier(.57,.09,.6,.98);
+	// transform: scale(1);
+	transition: all 1s cubic-bezier(.57,.09,.6,.98);
 }
 .initiative-block:hover .initiative-img .scale,
 .initiative-block:focus .initiative-img .scale {
-	transform: scale(1.03);
+	// transform: scale(1.03);
 }
 .initiative-block:hover .initiative-img:after,
 .initiative-block:focus .initiative-img:after {
