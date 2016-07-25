@@ -8,8 +8,36 @@
 		max-width: 80px;
 		float: right;
 
-	}
-
-	
+	}	
 	
 }
+
+
+
+.student-container {
+    margin: 20px 20px 0 0;  
+    
+}
+
+.student-image {
+    float: left;
+    padding-right: 20px;
+	margin-left: 10px;
+	max-width: 200px;
+	max-height: 200px;
+}
+
+
+
+.student-content {
+    margin-left: 210px
+}
+
+.student-title {
+    font-weight: bold;
+    font-size: 200%
+}
+
+// .student-image img {
+//     display: block
+// }

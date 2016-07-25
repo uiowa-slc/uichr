@@ -16,7 +16,22 @@
 
 				<% loop $Students %>
 				<div class="students" data-name="$Name" data-title="$Title" data-internship="$Internship" data-internshiplink="$InternshipLink" data-content="$Content" data-image="$Image.url" data-address="$Address, $Suburb, $State, $Postcode" data-lat="$Lat" data-lng="$Lng"> 
-				$InternshipLink
+
+
+				<div class="student-container">
+				    <h3 class="student-title">$Name</h3>
+				    <div class="student-image">$Image</div>
+				    <div class="student-content">
+				        <p> $Title </p>
+						<p> $Internship </p>
+						<p> $InternshipLink </p>
+						<p> $Content </p>
+				    </div>
+				</div>
+
+
+				<h1> </h1>
+
 				</div>
 				<% end_loop %>
 
