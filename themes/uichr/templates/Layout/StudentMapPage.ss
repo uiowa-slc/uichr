@@ -15,6 +15,7 @@
 				<div id="map" style="width:1010px;height:600px;"></div>
 
 				<% loop $Students %>
+
 				<div class="students" data-name="$Name" data-title="$Title" data-internship="$Internship" data-internshiplink="$InternshipLink" data-content="$Content" data-image="$Image.url" data-address="$Address, $Suburb, $State, $Postcode" data-lat="$Lat" data-lng="$Lng"> 
 
 
@@ -31,6 +32,7 @@
 
 
 				<h1> </h1>
+
 
 				</div>
 				<% end_loop %>
@@ -50,7 +52,14 @@
 
 <% include Initiatives %>
 
-
+<script id="info-window-template" type="text/x-handlebars-template">
+	<div class="info-window">
+		{{#if ImageURL}}<img src="{{ImageURL}}" alt="" role="presentation" />{{/if}}
+		<p>{{Name}} - {{Title}}</p>
+		<p>{{Internship}} - {{InternshipLink}}</p>
+		{{{Content}}}
+	</div>			
+</script>
 
 <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBCHMZeNAs_TKVb44f1XIEqCD-BIt5QaM4"></script>
 

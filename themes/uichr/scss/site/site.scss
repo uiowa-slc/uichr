@@ -23,21 +23,6 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 }
-.mobile-hide {
-	@media (max-width: $break-medium ) {
-		display: none;
-	}
-}
-.tablet-hide {
-	@media (max-width: $break-large ) {
-		display: none;
-	}
-}
-.tablet-show {
-	@media (min-width: $break-large) {
-		display: none;
-	}
-}
 
 // .wf-loading .main-nav>li>a {
 // 	opacity: 0;
@@ -118,7 +103,7 @@ Layout
 	padding-left: 1em;
 	padding-right: 1em;
 	position: relative;
-	@media (min-width: $break-medium) {
+	@media (min-width: $break-large) {
 		padding-left: 3em;
 		padding-right: 3em;
 	}
@@ -155,10 +140,9 @@ Layout
 }
 .page-title {
 	font-size: 40px;
-	margin: 0 0 .5em 0;
+	margin: 0;
 	text-transform: capitalize;
 	@media (min-width: $break-medium) {
-		margin: 0;
 		font-size: 70px;
 	}
 }
@@ -173,6 +157,7 @@ Layout
 .sidebar {
 	@media (min-width: $break-large) {
 		padding-left: 3em;
+		float: right;
 	}
 }
 

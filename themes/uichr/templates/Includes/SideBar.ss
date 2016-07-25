@@ -1,5 +1,4 @@
 <div class="col-lg-4 sidebar">
-	<% include SideNav %>
 
 	<%-- show event types --%>
 	<% if $ID == 9 %>

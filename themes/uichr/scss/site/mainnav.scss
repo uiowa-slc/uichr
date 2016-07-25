@@ -4,6 +4,9 @@
 	margin-top: .5em;
 	position: relative;
 	z-index: 1;
+	@media (max-width: $break-large - 1) {
+		display: none;
+	}
 }
 .main-nav {
 	text-align: center;
@@ -17,13 +20,17 @@
 .main-nav > li > a {
 	color: #eee;
 	display: block;
-	font-size: 25px;
+	font-size: 22px;
 	letter-spacing: 1px;
-	padding: 2px 24px;
+	padding: 2px 14px;
 	font-family: $heading-font;
 	position: relative;
 	transition: none;
 	z-index: 2;
+	@media (min-width: 1090px) {
+		font-size: 25px;
+		padding: 2px 23px;
+	}
 }
 
 /* hover */
@@ -122,7 +129,6 @@
 	transition: padding .1s ease-in-out;
 	&:hover, &:focus {
 		color: $link;
-		padding-left: 2px;
 	}
 }
 
