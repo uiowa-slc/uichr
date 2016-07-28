@@ -48,5 +48,5 @@
 	</div>
 </script>
 
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBCHMZeNAs_TKVb44f1XIEqCD-BIt5QaM4"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCHMZeNAs_TKVb44f1XIEqCD-BIt5QaM4"></script>
 
