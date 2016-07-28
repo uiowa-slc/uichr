@@ -27,6 +27,7 @@ module.exports = function(grunt) {
 					'<%= project.src %>/js/plugins/touch.js',
 					'<%= project.src %>/js/plugins/slick.js',
 					'<%= project.src %>/js/plugins/z-menubar.js',
+					'<%= project.src %>/js/plugins/handlebars.min.js',
 					'<%= project.src %>/js/main.js'
 				],
 				dest: '<%= project.src %>/js/build/production.js'
