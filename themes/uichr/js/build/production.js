@@ -5489,7 +5489,8 @@ function initMap() {
 	var mapProp = {
 		center:new google.maps.LatLng(19.80805343454635, 10.426024999999987),
 		zoom:2,
-		mapTypeId:google.maps.MapTypeId.ROADMAP
+		mapTypeId:google.maps.MapTypeId.ROADMAP,
+		scrollwheel:  false
 	};
 	var map = new google.maps.Map(document.getElementById("map"),mapProp);
 	var locations = getStudents();
@@ -5520,14 +5521,54 @@ function initMap() {
 				infowindow.setContent(html);
 				infowindow.open(map, marker);
               // zooms the map into marker
-              map.setZoom(5);
-              map.setCenter(marker.getPosition());
+              // map.setZoom(5);
+              // map.setCenter(marker.getPosition());
           }
       })(marker, i));
 	}
-
+        function autoCenter() {
+          //  Create a new viewpoint bound
+          var bounds = new google.maps.LatLngBounds();
+          //  Go through each...
+          for (var i = 0; i < markers.length; i++) {  
+            bounds.extend(markers[i].position);
+          }
+          //  Fit these bounds to the map
+          map.fitBounds(bounds);
+        }
+        autoCenter();
 
 }
+		function getStudents() {
+
+			var students = 0;
+			var internshipLocations = [];
+
+			$('.students').each(function(index, element) {
+				var student = this;
+
+				if(student) {
+					var name = $(this).data("name");
+					var title = $(this).data("title");
+					var internship = $(this).data("internship");
+					var internshiplink = $(this).data("internshiplink");
+					var content = $(this).data("content");
+					var address =$(this).data("address");
+					var lat = $(this).data("lat");
+					var lng = $(this).data("lng");
+					var image = $(this).data("image");
+					//console.log("here is the internshiplink" + internshiplink + "here it ends");
+
+
+				}
+				internshipLocations[students] = [name, title, internship, internshiplink, content, lat, lng, image];
+				console.log(image);
+				students++;
+
+			} );
+			//console.log(internshipLocations)
+			return internshipLocations;
+		}
 /* ========================================================================
  * DOM-based Routing
  * Based on http://goo.gl/EUTi53 by Paul Irish
@@ -5653,36 +5694,7 @@ function initMap() {
     'StudentMapPage': {
       init: function() {
 
-		function getStudents() {
 
-			var students = 0;
-			var internshipLocations = [];
-
-			$('.students').each(function(index, element) {
-				var student = this;
-
-				if(student) {
-					var name = $(this).data("name");
-					var title = $(this).data("title");
-					var internship = $(this).data("internship");
-					var internshiplink = $(this).data("internshiplink");
-					var content = $(this).data("content");
-					var address =$(this).data("address");
-					var lat = $(this).data("lat");
-					var lng = $(this).data("lng");
-					var image = $(this).data("image");
-					//console.log("here is the internshiplink" + internshiplink + "here it ends");
-
-
-				}
-				internshipLocations[students] = [name, title, internship, internshiplink, content, lat, lng, image];
-				console.log(image);
-				students++;
-
-			} );
-			//console.log(internshipLocations)
-			return internshipLocations;
-		}
 
 
 	}
