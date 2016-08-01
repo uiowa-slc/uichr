@@ -32,7 +32,6 @@ ErrorDocument 500 /assets/error-500.html
 php_flag display_errors on
 
 EnableSendfile off
-CacheDisable /
 # ------------------------------------------------------------------------------
 # | UTF-8 encoding                                                             |
 # ------------------------------------------------------------------------------
