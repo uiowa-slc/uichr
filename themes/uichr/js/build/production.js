@@ -5521,17 +5521,73 @@ this.pendingContent=void 0),a&&this.source.push(a)},replaceStack:function(a){var
 
 				}).focus(); // focus on the content container
 			});
+
+
 		};
 
-		$(document).ready(function() {
-			skipLink('.skip-link');
 
-			$(".more-link").click(function(e){
-				$(this).closest(".text-container").toggleClass("show-more");
-				e.preventDefault();
-			});
+		skipLink('.skip-link');
 
+		$(".more-link").click(function(e){
+			$(this).closest(".text-container").toggleClass("show-more");
+			e.preventDefault();
 		});
+
+
+		// Shifter
+		$.shifter({
+			maxWidth: "979px"
+		});
+
+		// Naver
+		$(".subnavigation").navigation({
+			maxWidth: "979px"
+		});
+
+		// Slick
+
+		$('.slider-for').slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			arrows: true,
+			fade: true,
+			asNavFor: '.slider-nav',
+			responsive: [
+		    {
+		      breakpoint: 768,
+		      settings: {
+					arrows: false,
+					dots: true,
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					fade: false,
+					adaptiveHeight: true
+		      }
+		    },
+		    {
+		      breakpoint: 480,
+		      settings: {
+					arrows: false,
+					dots: true,
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					fade: false,
+					adaptiveHeight: true
+		      }
+		    }
+		   ]
+		});
+		$('.slider-nav').slick({
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			asNavFor: '.slider-for',
+			dots: false,
+			focusOnSelect: true
+		});
+
+
+
+
 
       },
       finalize: function() {
@@ -5581,57 +5637,55 @@ this.pendingContent=void 0),a&&this.source.push(a)},replaceStack:function(a){var
 			//console.log(internshipLocations)
 			return internshipLocations;
 		}
+	var source   = $("#info-window-template").html();
+	var template = Handlebars.compile(source);
 
-		function init() {
+	var mapProp = {
+		center:new google.maps.LatLng(19.80805343454635, 10.426024999999987),
+		zoom:2,
+		mapTypeId:google.maps.MapTypeId.ROADMAP
+	};
+	var map = new google.maps.Map(document.getElementById("map"),mapProp);
+	var locations = getStudents();
 
-			var source   = $("#info-window-template").html();
-			var template = Handlebars.compile(source);
+	var infowindow = new google.maps.InfoWindow({
+		maxWidth: 300
+	});
 
-			var mapProp = {
-				center:new google.maps.LatLng(19.80805343454635, 10.426024999999987), 
-				zoom:2,
-				mapTypeId:google.maps.MapTypeId.ROADMAP
-			};
-			var map = new google.maps.Map(document.getElementById("map"),mapProp);
-			var locations = getStudents();
+	var markers = new Array();
+	for (var i = 0; i < locations.length; i++) {
+		var marker = new google.maps.Marker ({
+			position: new google.maps.LatLng(locations[i][5], locations[i][6]),
+			map: map,
+		});
+		markers.push(marker);
+		google.maps.event.addListener(marker, 'click', (function(marker, i) {
+			return function() {
+				var context = {
+					Name: locations[i][0],
+					Title: locations[i][1],
+					ImageURL: locations[i][7],
+					Internship: locations[i][2],
+					InternshipLink: locations[i][3],
+					Content: locations[i][4]
 
-			var infowindow = new google.maps.InfoWindow({
-				maxWidth: 300
-			});
-
-			var markers = new Array();
-			for (var i = 0; i < locations.length; i++) {  
-				var marker = new google.maps.Marker ({
-					position: new google.maps.LatLng(locations[i][5], locations[i][6]),
-					map: map, 
-				});
-				markers.push(marker);
-				google.maps.event.addListener(marker, 'click', (function(marker, i) {
-					return function() {
-						var context = {
-							Name: locations[i][0],
-							Title: locations[i][1], 
-							ImageURL: locations[i][7],
-							Internship: locations[i][2],
-							InternshipLink: locations[i][3],
-							Content: locations[i][4]
-
-						};
-						var html    = template(context);
-						infowindow.setContent(html);
-						infowindow.open(map, marker);
-		              // zooms the map into marker 
-		              map.setZoom(5);
-		              map.setCenter(marker.getPosition());
-		          }
-		      })(marker, i));
-			}
-
-
-		}
-
-		google.maps.event.addDomListener(window, 'load', init);
+				};
+				var html    = template(context);
+				infowindow.setContent(html);
+				infowindow.open(map, marker);
+              // zooms the map into marker
+              map.setZoom(5);
+              map.setCenter(marker.getPosition());
+          }
+      })(marker, i));
 	}
+
+
+	}
+
+
+
+
     }
   };
 
@@ -5663,7 +5717,7 @@ this.pendingContent=void 0),a&&this.source.push(a)},replaceStack:function(a){var
       // Fire common finalize JS
       UTIL.fire('common', 'finalize');
 
-   
+
 
     }
   };
@@ -5672,26 +5726,3 @@ this.pendingContent=void 0),a&&this.source.push(a)},replaceStack:function(a){var
   $(document).ready(UTIL.loadEvents);
 
 })(jQuery); // Fully reference jQuery after this point.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

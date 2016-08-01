@@ -42,12 +42,10 @@
 	<% include ShifterNavigation %>
 
 
-	<%-- JS --%>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCHMZeNAs_TKVb44f1XIEqCD-BIt5QaM4"></script>	<%-- JS --%>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="{$ThemeDir}/js/build/production.min.js"></script>
-	<% if $ClassName == StudentMapPage %>
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCHMZeNAs_TKVb44f1XIEqCD-BIt5QaM4"></script>
-	<% end_if %>
+
 	$BetterNavigator
 </body>
 </html>
