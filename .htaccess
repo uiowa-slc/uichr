@@ -31,6 +31,7 @@ ErrorDocument 500 /assets/error-500.html
 #php_value error_reporting 2147483647
 php_flag display_errors on
 
+EnableSendfile off
 
 # ------------------------------------------------------------------------------
 # | UTF-8 encoding                                                             |
