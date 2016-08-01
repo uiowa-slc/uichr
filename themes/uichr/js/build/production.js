@@ -5645,7 +5645,8 @@ this.pendingContent=void 0),a&&this.source.push(a)},replaceStack:function(a){var
 		center:new google.maps.LatLng(19.80805343454635, 10.426024999999987),
 		zoom:2,
 		mapTypeId:google.maps.MapTypeId.ROADMAP,
-		scrollwheel:  false
+		scrollwheel:  false,
+		draggable: false
 	};
 	var map = new google.maps.Map(document.getElementById("map"),mapProp);
 	var locations = getStudents();
@@ -5690,6 +5691,10 @@ this.pendingContent=void 0),a&&this.source.push(a)},replaceStack:function(a){var
           }
           //  Fit these bounds to the map
           map.fitBounds(bounds);
+          var listener = google.maps.event.addListener(map, "idle", function () {
+		    map.setZoom(3);
+		    google.maps.event.removeListener(listener);
+});
         }
         autoCenter();
 
