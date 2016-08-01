@@ -5637,13 +5637,15 @@ this.pendingContent=void 0),a&&this.source.push(a)},replaceStack:function(a){var
 			//console.log(internshipLocations)
 			return internshipLocations;
 		}
+
 	var source   = $("#info-window-template").html();
 	var template = Handlebars.compile(source);
 
 	var mapProp = {
 		center:new google.maps.LatLng(19.80805343454635, 10.426024999999987),
 		zoom:2,
-		mapTypeId:google.maps.MapTypeId.ROADMAP
+		mapTypeId:google.maps.MapTypeId.ROADMAP,
+		scrollwheel:  false
 	};
 	var map = new google.maps.Map(document.getElementById("map"),mapProp);
 	var locations = getStudents();
@@ -5674,11 +5676,22 @@ this.pendingContent=void 0),a&&this.source.push(a)},replaceStack:function(a){var
 				infowindow.setContent(html);
 				infowindow.open(map, marker);
               // zooms the map into marker
-              map.setZoom(5);
-              map.setCenter(marker.getPosition());
+              // map.setZoom(5);
+              // map.setCenter(marker.getPosition());
           }
       })(marker, i));
 	}
+        function autoCenter() {
+          //  Create a new viewpoint bound
+          var bounds = new google.maps.LatLngBounds();
+          //  Go through each...
+          for (var i = 0; i < markers.length; i++) {  
+            bounds.extend(markers[i].position);
+          }
+          //  Fit these bounds to the map
+          map.fitBounds(bounds);
+        }
+        autoCenter();
 
 
 	}
