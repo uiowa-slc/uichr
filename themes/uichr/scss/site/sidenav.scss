@@ -11,12 +11,12 @@ Subnavigation
 .subnavigation .section-title {
 	margin: 0;
    font-size: 23px;
+   padding: 0 0 .5em 0;
 	& a {
 		display: block;
 	}
 	@media (min-width: $break-large) {
 		font-size: 34px;
-		padding: 0 0 .5em 0;
 	}
 }
 .subnavigation .first-level {

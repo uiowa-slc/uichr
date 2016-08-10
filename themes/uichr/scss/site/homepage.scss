@@ -9,14 +9,11 @@
 		height: 500px;
 	}
 }
-.hero-top .test {
+.hero-top .inner {
 	@media (min-width: $break-medium) {
 		position: absolute;
 		top: 0;
 	}
-}
-.dummy {
-	text-align: left;
 }
 .slider-for .slick-dots {
 	text-align: left;
@@ -285,9 +282,6 @@
 /* ---------------------------------------------------------------
 Iniatives / Programs
 --------------------------------------------------------------- */
-.program-container {
-
-}
 .program-intro {
 	padding: 3.5em 0;
 	@media (min-width: $break-small) {
@@ -495,10 +489,6 @@ News / Events
 .home-events .eventcard-summary {
 	display: none;
 }
-
-
-
-
 .more-programs {
   max-height: 0;
   overflow: hidden;

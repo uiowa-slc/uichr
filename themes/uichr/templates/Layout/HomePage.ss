@@ -3,7 +3,7 @@
 	<div class="slider slider-for">
 	<% loop $Heros.Limit(3) %>
 		<div class="hero-top">
-			<div class="test">
+			<div class="inner">
 				<picture>
 					<!--[if IE 9]><video style="display: none;"><![endif]-->
 					<source srcset="$HeroPhoto.CroppedFocusedImage(1600,700).URL" media="(min-width: 1200px)">
@@ -38,8 +38,16 @@
 						<% end_loop %>
 					</ol>
 					<div class="hero-overview">
-						<p class="hero-overview-copy">The Human Rights Certificate Program seeks to broaden understanding of human rights issues and to identify solutions to them on an interdisciplinary basis. Labore et dolore magna aliqua enim ad minim veniam.</p>
-						<a href="#" class="hero-overview-link"><span class="link">Program Overview</span></a>
+						<p class="hero-overview-copy">$HeroContent</p>
+						<% if $HeroContentLinkText %>
+							<% if $CarouselAssociatedPage %>
+								<a href="$CarouselAssociatedPage.Link" class="hero-overview-link">
+									<span class="link">$HeroContentLinkText</span>
+								</a>
+								<% else %>
+									<span class="link">$HeroContentLinkText</span>
+							<% end_if %>
+						<% end_if %>
 					</div>
 				</div>
 			</div>
@@ -51,8 +59,8 @@
 	<div class="container">
 		<div class="col-sm-12">
 			<div class="program-intro clearfix">
-				<h3>Protecting Human Rights at home and abroad</h3>
-				$Content
+				<h3>$ProgramHeading</h3>
+				<p>$ProgramContent</p>
 			</div>
 			<div class="text-container">
 				<div class="program-list">

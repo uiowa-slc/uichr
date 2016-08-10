@@ -7,6 +7,11 @@
 	</header>
 	<section class="container page-content">
 		<div class="row">
+			<%-- Sub Navigation --%>
+			<% if $Children || $Parent %>
+				<% include SideNav %>
+			<% end_if %>
+
 			<!-- Main Content -->
 			<h3 id="main-content" class="sr-only" tabindex="-1">Main Content</h3>
 			<div class="<% if $Children || $Parent %>col-lg-8 children<% else %>col-md-10 col-md-offset-1<% end_if %>">

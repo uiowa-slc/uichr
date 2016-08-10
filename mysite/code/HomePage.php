@@ -1,10 +1,13 @@
 <?php
 class HomePage extends Page {
 	private static $db = array(
-
+		"HeroContent" => "Text",
+		"HeroContentLinkText" => "Text",
+		"ProgramHeading" => "Text",
+		"ProgramContent" => "Text",
 	);
 	private static $has_one = array(
-
+		'CarouselAssociatedPage' => 'SiteTree',
 	);
 	private static $has_many = array(
 		'Programs' => 'Program',
@@ -17,14 +20,22 @@ class HomePage extends Page {
 		$fields->removeByName("Metadata");
 		$fields->removeByName("PageSummary");
 		$fields->removeByName("PageTags");
+		$fields->removeByName("Content");
 
 		$fields->addFieldToTab("Root.Main", new HeaderField( '<br><h3>Carousel</h3>', '3', true ) );
+		$fields->addFieldToTab("Root.Main", new TextareaField("HeroContent", "Carousel Content"));
+		$fields->addFieldToTab("Root.Main", new TextField("HeroContentLinkText", "Link Text"));
+		$fields->addFieldToTab("Root.Main", new TreeDropdownField('CarouselAssociatedPageID', 'Link to this page', 'SiteTree'));
+
 		$gridFieldConfig = GridFieldConfig_RelationEditor::create()->addComponents();
 		$gridFieldConfig->addComponent(new GridFieldSortableRows('SortOrder'));
 		$gridField = new GridField("Heros", "Carousel Items:", $this->Heros(), $gridFieldConfig);
 		$fields->addFieldToTab("Root.Main", $gridField);
 
+
 		$fields->addFieldToTab("Root.Main", new HeaderField( '<br><h3>Programs</h3>', '3', true ) );
+		$fields->addFieldToTab("Root.Main", new TextField("ProgramHeading", "Programs Heading"));
+		$fields->addFieldToTab("Root.Main", new TextareaField("ProgramContent", "Programs Heading"));
 		$gridFieldConfig = GridFieldConfig_RelationEditor::create()->addComponents();
 		$gridFieldConfig->addComponent(new GridFieldSortableRows('SortOrder'));
 		$gridField = new GridField("Programs", "Programs:", $this->Programs(), $gridFieldConfig);
