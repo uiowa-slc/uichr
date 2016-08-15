@@ -8,9 +8,15 @@
 	</header>
 	<section class="container page-content">
 		<div class="row">
+
+			<%-- Sub Navigation --%>
+			<% if $Children || $Parent %>
+				<% include SideNav %>
+			<% end_if %>
+
 			<!-- Main Content -->
 			<h3 id="main-content" class="sr-only" tabindex="-1">Main Content</h3>
-			<div class="col-md-12">
+			<div class="content <% if $Children || $Parent %>col-lg-8 children<% else %>col-md-10 col-md-offset-1<% end_if %>">
 
 				<% if $FeaturedImage %>
 					<img src="$FeaturedImage.SetWidth(350).URL" alt="" class="right entryphoto">
@@ -42,8 +48,11 @@
 				</p>
 
 			</div><!-- end .col -->
+
+			<!-- Side Bar -->
+			<% if $Children || $Parent %><%--Determine if Side Nav should be rendered, you can change this logic --%>
+				<% include SideBar %>
+			<% end_if %>
 		</div><!-- end .row -->
 	</section>
-
 </main><!-- end .container -->
-<% include RelatedNewsEntries %>
