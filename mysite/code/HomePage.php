@@ -21,6 +21,8 @@ class HomePage extends Page {
 		$fields->removeByName("PageSummary");
 		$fields->removeByName("PageTags");
 		$fields->removeByName("Content");
+		$fields->removeByName("MainPhoto");
+
 
 		$fields->addFieldToTab("Root.Main", new HeaderField( '<br><h3>Carousel</h3>', '3', true ) );
 		$fields->addFieldToTab("Root.Main", new TextareaField("HeroContent", "Carousel Content"));

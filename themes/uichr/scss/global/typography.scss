@@ -70,8 +70,11 @@ h4 + h5,
 h5 + h6 {margin-top:0;}
 
 .page-content p.intro {
-	font-size: ($base-font * 1.3) + px;
+	font-size: ($base-font * 1.2) + px;
 	margin-top: 0;
+	@media (min-width: $break-small) {
+		font-size: ($base-font * 1.3) + px;
+	}
 }
 
 ul,ol {

@@ -108,7 +108,7 @@ Layout
 		padding-right: 3em;
 	}
 }
-.main {
+.main .content {
 	min-height: 600px;
 }
 .page-photo .picture {
@@ -140,7 +140,7 @@ Layout
 }
 .page-title {
 	font-size: 40px;
-	margin: 0;
+	margin: 0 0 10px 0;
 	text-transform: capitalize;
 	@media (min-width: $break-medium) {
 		font-size: 70px;
