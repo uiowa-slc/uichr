@@ -92,7 +92,7 @@
 	box-shadow: 1px 1px 0 rgba(0,0,0,.1);
 	position: relative;
 	&:hover, &:focus {
-		color: #333;
+		color: $green;
 		background-color: #eee;
 		text-decoration: none;
 		&:after {
@@ -442,6 +442,18 @@ Iniatives / Programs
 	opacity: .12;
 }
 
+.more-link {
+	margin-bottom: -24px;
+	text-transform: uppercase;
+	box-shadow: 3px 4px 0 rgba(0,0,0,0.1);
+   border: none;
+	&:after {
+		content: "show more programs [+]";
+		.show-more & {
+			content: "show less [-]";
+		}
+	}
+}
 
 
 /* ---------------------------------------------------------------
@@ -503,21 +515,7 @@ News / Events
   }
 }
 
-.more-link {
-	margin-bottom: -24px;
-	text-transform: uppercase;
-	box-shadow: 3px 4px 0 rgba(0,0,0,0.1);
-   border: none;
-	&:hover {
 
-	}
-	&:after {
-		content: "show more programs [+]";
-		.show-more & {
-			content: "show less [-]";
-		}
-	}
-}
 
 
 

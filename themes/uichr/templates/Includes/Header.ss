@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="clearfix">
 			<a href="{$BaseHref}" class="logo">
-				<img src="{$ThemeDir}/images/UICHR-logo.png" alt="Youth Ballet and Community Dance School Logo">
+				<img src="{$ThemeDir}/images/UICHR-logo.png" alt="University of Iowa Center for Human Rights">
 			</a>
 			<% with SearchForm %>
 				<div class="searchform mobile-hide">

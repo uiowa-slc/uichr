@@ -1,5 +1,4 @@
 <section class="hero">
-
 	<div class="slider slider-for">
 	<% loop $Heros.Limit(3) %>
 		<div class="hero-top">
@@ -105,7 +104,9 @@
 						</ul>
 					</div>
 				</div>
-				<p class="text-center" style="margin: 0;"><a href="#" class="more-link btn btn-link"></a></p>
+				<p class="text-center" style="margin: 0;">
+					<button class="more-link btn btn-link"><span class="visuallyhidden">Show More Programs</span></button>
+				</p>
 			</div>
 
 		</div>
