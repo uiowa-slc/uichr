@@ -82,7 +82,7 @@
 						<% end_loop %>
 					</ul>
 				</div>
-				<div class="more-programs">
+				<div id="programs-panel" class="more-programs" role="tabpanel" aria-hidden="true" aria-labelledby="more-button">
 					<div class="program-list">
 						<ul class="unstyled justify justify-3">
 							<% loop $Programs.Limit(8,3) %>
@@ -105,7 +105,7 @@
 					</div>
 				</div>
 				<p class="text-center" style="margin: 0;">
-					<button class="more-link btn btn-link"><span class="visuallyhidden">Show More Programs</span></button>
+					<button id="more-button" class="more-link btn btn-link" role="tab" aria-controls="programs-panel" aria-expanded="false" aria-selected="false"><span class="visuallyhidden">Show More Programs</span></button>
 				</p>
 			</div>
 

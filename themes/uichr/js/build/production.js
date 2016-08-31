@@ -5528,8 +5528,32 @@ this.pendingContent=void 0),a&&this.source.push(a)},replaceStack:function(a){var
 
 		skipLink('.skip-link');
 
+		// Homepage Show More Programs toggle button
+		$panel = $('#programs-panel');
 		$(".more-link").click(function(e){
 			$(this).closest(".text-container").toggleClass("show-more");
+
+			// toggle aria-expanded on button
+			if ($(this).attr('aria-expanded') == 'false') {
+				$(this).attr('aria-expanded', 'true');
+			} else {
+				$(this).attr('aria-expanded', 'false');
+			}
+
+			// toggle aria-selected on button
+			if ($(this).attr('aria-selected') == 'false') {
+				$(this).attr('aria-selected', 'true');
+			} else {
+				$(this).attr('aria-selected', 'false');
+			}
+
+			// toggle aria-hidden on panel
+			if ($panel.attr('aria-hidden') == 'true') {
+				$panel.attr('aria-hidden', 'false');
+			} else {
+				$panel.attr('aria-hidden', 'true');
+			};
+
 			e.preventDefault();
 		});
 
@@ -5686,7 +5710,7 @@ this.pendingContent=void 0),a&&this.source.push(a)},replaceStack:function(a){var
           //  Create a new viewpoint bound
           var bounds = new google.maps.LatLngBounds();
           //  Go through each...
-          for (var i = 0; i < markers.length; i++) {  
+          for (var i = 0; i < markers.length; i++) {
             bounds.extend(markers[i].position);
           }
           //  Fit these bounds to the map
