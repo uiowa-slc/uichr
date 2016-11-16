@@ -30,7 +30,10 @@
 		</div><!-- end .row -->
 	</section>
 </main><!-- end .container -->
-<div id="map" style="width:100%;height:0;padding-top: 56.25%;"></div>
+
+<div class="map-container">
+	<div id="map" style="width:100%;height:100%;"></div>
+</div>
 
 <% loop $Students %>
 <div class="students" data-name="$Name" data-title="$Title" data-internship="$Internship" data-content="$Content" <% if $Image %>data-image="$Image.SetWidth(150).URL"<% end_if %> data-lat="$Lat" data-lng="$Lng">

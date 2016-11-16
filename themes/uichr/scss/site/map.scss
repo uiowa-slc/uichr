@@ -1,3 +1,17 @@
+.StudentMapPage{
+
+	.map-container{
+			height: 600px;
+			
+
+		@media (min-width: $break-large) {
+
+		}
+	}
+
+
+}
+
 .info-window {
 	padding-top: 8px;
 	img {

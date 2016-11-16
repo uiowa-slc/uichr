@@ -5654,7 +5654,7 @@ this.pendingContent=void 0),a&&this.source.push(a)},replaceStack:function(a){var
 
 				}
 				internshipLocations[students] = [name, title, internship, internshiplink, content, lat, lng, image];
-				console.log(image);
+				//console.log(image);
 				students++;
 
 			} );
