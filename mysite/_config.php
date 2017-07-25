@@ -31,3 +31,4 @@ if(Director::isLive()) {
 	Director::forceSSL();
 }
 GD::set_default_quality(80);
+Authenticator::set_default_authenticator('SAMLAuthenticator');
