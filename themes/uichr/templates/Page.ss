@@ -3,6 +3,7 @@
 <!--[if lt IE 9]><html lang="en" class="lt-ie9 no-js"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <head>
+	<% include GoogleTagManager %>
 	<% base_tag %>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,7 +29,7 @@
 	<![endif]-->
 </head>
 <body class="$ClassName shifter">
-	<% include GoogleAnalytics %>
+	<% include GoogleTagManagerNoscript %>
 	<% include Svg %>
 	<div class="shifter-page">
 		<a href="#main-content" class="skip-link">Skip to the main content</a>
