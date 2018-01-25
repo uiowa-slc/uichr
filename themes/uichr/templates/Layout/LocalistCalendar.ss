@@ -14,10 +14,14 @@
 
 				$Content
 				$Form
-
+				<% if $EventList %>
 				<% loop $EventList %>
 					<% include EventCard %>
 				<% end_loop %>
+				<% else %>
+
+					<p>No events are currently listed.</p>
+				<% end_if %>
 
 				<%-- <div class="">
 					<% loop $EventList %>

@@ -120,6 +120,7 @@
 				<div class="home-events">
 					<h3>UICHR Events <a href="{$BaseHref}events/" class="btn btn-link btn-xs">view all events</a></h3>
 					<% with $Page(events) %>
+					<% if $EventList %>
 					<% loop $EventList.Limit(2) %>
 						<% include EventCard %>
 						<%-- <div class="clearfix">
@@ -134,6 +135,9 @@
 							<p><% if $Venue %>$Venue.Title<% end_if %></p>
 						</div> --%>
 					<% end_loop %>
+					<% else %>
+						<p>No events are currently listed.</p>
+					<% end_if %>
 					<% end_with %>
 				</div>
 			</div>

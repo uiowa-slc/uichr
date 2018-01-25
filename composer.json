@@ -15,6 +15,7 @@
 		"silverstripe/widgets": "*",
 		"colymba/gridfield-bulk-editing-tools" : "*",
 		"md/division-bar" : "*",
+		"md/division-analytics" : "*",
 		"undefinedoffset/sortablegridfield": "*",
 		"silverstripe-australia/addressable": "^1.1",
 		"silverstripe/activedirectory" : "3.*"
@@ -36,6 +37,11 @@
 				"url": "https://github.com/StudentLifeMarketingAndDesign/division-bar"
 
 		},
+                {
+                                "type": "vcs",
+                                "url": "https://github.com/StudentLifeMarketingAndDesign/division-analytics"
+
+                },
         {
             "type": "vcs",
             "url": "https://github.com/StudentLifeMarketingAndDesign/silverstripe-activedirectory"
