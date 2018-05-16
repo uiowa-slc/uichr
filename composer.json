@@ -9,7 +9,7 @@
 		"silverstripe/userforms": "*",
 		"md/rss-display" : "dev-master",
 		"silverstripe/googlesitemaps": "*",
-		"jonom/silverstripe-betternavigator" : "2.1.0",
+		"jonom/silverstripe-betternavigator" : "*",
 		"jonom/focuspoint" : "*",
 		"silverstripe/blog" : "2.*",
 		"silverstripe/widgets": "*",
