@@ -21,10 +21,12 @@
 				</div>
 			</div>
 			<div class="col-md-6">
+
 				<div class="donate clearfix">
-					<a href="https://www.givetoiowa.org/GiveToIowa/WebObjects/GiveToIowa.woa/wa/goTo?area=uichr" class="donate-btn">Donate</a>
+					<% if $SiteConfig.DonateLink %><a href="$SiteConfig.DonateLink" class="donate-btn" target="_blank">Donate</a><% end_if %>
 					<h4>UI Center for Human Rights Fund</h4>
 				</div>
+
 				<div class="footer-links">
 					<div class="col">
 						<ul class="unstyled">

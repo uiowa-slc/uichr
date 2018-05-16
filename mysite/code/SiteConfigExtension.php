@@ -14,6 +14,7 @@ class SiteConfigExtension extends DataExtension {
 		'Phone' => 'Text',
 		'Fax' => 'Text',
 		'Email' => 'Text',
+		'DonateLink' => 'Text',
 	);
 
 	static $has_one = array(
@@ -32,6 +33,7 @@ class SiteConfigExtension extends DataExtension {
 		$fields->addFieldToTab('Root.Main', new TextField('Phone', 'Phone Number'));
 		$fields->addFieldToTab('Root.Main', new TextField('Fax', 'Fax'));
 		$fields->addFieldToTab('Root.Main', new TextField('Email', 'Email'));
+		$fields->addFieldToTab('Root.Main', new TextField('DonateLink', 'Donation Link'));
 
 		return $fields;
 
