@@ -87,7 +87,8 @@
 				<% else_if $Venue.ImageURL %>
 					<img src="$Venue.ImageURL" alt="$Title" class="right event-img">
 				<% end_if %>
-				<p><a href="{$LocalistLink}.ics">Add to iCal or Outlook</a></p>
+				<%-- ICS functionality not working in events.uiowa.edu api --%>
+				<%-- <p><a href="{$LocalistLink}.ics">Add to iCal or Outlook</a></p> --%>
 			</div>
 
 		</div><!-- end .row -->
