@@ -2,14 +2,15 @@
 
 	<%-- show event types --%>
 	<% if $ID == 9 %>
-		<div class="WidgetHolder">
+	<%-- debugging event by type, disabling for now --%>
+<%-- 		<div class="WidgetHolder">
 			<h3>Event By Type</h3>
 			<ul>
 				<% loop $TrendingTypes.Limit(5) %>
 					<li><a href = "$Link(false)" class="tag">$Title.LimitCharacters(20)</a></li>
 				<% end_loop %>
 			</ul>
-		</div>
+		</div> --%>
 	<% end_if %>
 
 	<%-- Related News Posts --%>
