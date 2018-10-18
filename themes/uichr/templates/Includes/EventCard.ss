@@ -2,7 +2,7 @@
 
 	<%-- image --%>
 	<div class="eventcard-imgwrap">
-		<% if $Image %>
+		<% if $Image.URL %>
 			<div style="background-image: url($Image.URL);"></div>
 			<%-- <img src="$Image.URL" alt="$Title" class="eventcard-img"> --%>
 		<% else_if $Venue.ImageURL %>

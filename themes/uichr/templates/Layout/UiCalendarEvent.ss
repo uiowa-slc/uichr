@@ -82,7 +82,7 @@
 
 			</div><!-- end .col -->
 			<div class="col-md-4">
-				<% if $Image %>
+				<% if $Image.URL %>
 					<img src="$Image.URL" alt="$Title" class="right event-img">
 				<% else_if $Venue.ImageURL %>
 					<img src="$Venue.ImageURL" alt="$Title" class="right event-img">
