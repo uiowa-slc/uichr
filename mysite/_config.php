@@ -3,7 +3,7 @@
 use SilverStripe\Security\PasswordValidator;
 use SilverStripe\Security\Member;
 use SilverStripe\Control\Director;
-use SilverStripe\ORM\Search\FulltextSearchable
+use SilverStripe\ORM\Search\FulltextSearchable;
 
 FulltextSearchable::enable();
 
