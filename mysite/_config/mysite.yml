@@ -1,0 +1,20 @@
+---
+Name: myproject
+---
+SilverStripe\Core\Manifest\ModuleManifest:
+  project: app
+SilverStripe\CMS\Model\SiteTree:
+  extensions:
+    - MetaTitleExtension
+MetaTitleExtension:
+  InsertBefore: MetaDescription
+NewsHolder:
+  extensions:
+    - SilverStripe\Widgets\Extensions\WidgetPageExtension
+Page:
+  extensions:
+    - SilverStripe\Widgets\Extensions\WidgetPageExtension
+Student:
+  extensions:
+    - Symbiote\Addressable\Addressable
+    - Symbiote\Addressable\Geocodable

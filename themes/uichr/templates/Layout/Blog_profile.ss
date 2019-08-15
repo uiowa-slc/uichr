@@ -16,7 +16,7 @@
 				<div class="clearfix">
 					<% if $CurrentProfile.BlogProfileImage %>
 					<div class="profile-image">
-						<img src="$CurrentProfile.BlogProfileImage.setWidth(300).URL" alt="$CurrentProfile.FirstName $CurrentProfile.Surname" class="right">
+						<img src="$CurrentProfile.BlogProfileImage.ScaleWidth(300).URL" alt="$CurrentProfile.FirstName $CurrentProfile.Surname" class="right">
 					</div>
 					<% end_if %>
 					<div class="profile-summary">

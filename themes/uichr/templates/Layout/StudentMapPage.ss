@@ -36,7 +36,7 @@
 </div>
 
 <% loop $Students %>
-<div class="students" data-name="$Name" data-title="$Title" data-internship="$Internship" data-content="$Content" <% if $Image %>data-image="$Image.SetWidth(150).URL"<% end_if %> data-lat="$Lat" data-lng="$Lng">
+<div class="students" data-name="$Name" data-title="$Title" data-internship="$Internship" data-content="$Content" <% if $Image %>data-image="$Image.ScaleWidth(150).URL"<% end_if %> data-lat="$Lat" data-lng="$Lng">
 <%-- $InternshipLink --%>
 </div>
 <% end_loop %>

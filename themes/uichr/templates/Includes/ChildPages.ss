@@ -5,7 +5,7 @@
 		<section class="child-block <% if $PageSummaryImg %>withphoto<% end_if %>">
 			<a href="$Link" class="blocklink">
 				<% if $PageSummaryImg %>
-					<img src="$PageSummaryImg.CroppedImage(250,225).URL" alt="" class="child-block-img">
+					<img src="$PageSummaryImg.Fill(250,225).URL" alt="" class="child-block-img">
 				<% end_if %>
 				<div class="child-block-content">
 					<h3 class="title">$Title</h3>

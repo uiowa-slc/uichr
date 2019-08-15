@@ -1,5 +1,10 @@
 <?php
 
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\TextField;
+use SilverStripe\Core\Config\Config;
+use SilverStripe\ORM\DataExtension;
+
 class MetaTitleExtension extends DataExtension
 {
 

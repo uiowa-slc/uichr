@@ -5,11 +5,11 @@
 			<div class="inner">
 				<picture>
 					<!--[if IE 9]><video style="display: none;"><![endif]-->
-					<source srcset="$HeroPhoto.CroppedFocusedImage(1600,700).URL" media="(min-width: 1200px)">
-					<source srcset="$HeroPhoto.CroppedFocusedImage(1200,800).URL" media="(min-width: 768px)">
-					<source srcset="$HeroPhoto.CroppedFocusedImage(768,500).URL" media="(min-width: 480px)">
+					<source srcset="$HeroPhoto.FocusFill(1600,700).URL" media="(min-width: 1200px)">
+					<source srcset="$HeroPhoto.FocusFill(1200,800).URL" media="(min-width: 768px)">
+					<source srcset="$HeroPhoto.FocusFill(768,500).URL" media="(min-width: 480px)">
 					<!--[if IE 9]></video><![endif]-->
-					<img srcset="$HeroPhoto.CroppedFocusedImage(480,300).URL" alt="$Title">
+					<img srcset="$HeroPhoto.FocusFill(480,300).URL" alt="$Title">
 				</picture>
 			</div>
 			<div class="container">
@@ -30,7 +30,7 @@
 						<% loop $Heros.Limit(3) %>
 							<li>
 								<div>
-									<div class="hero-nav-img"><img src="$HeroPhoto.CroppedFocusedImage(212,167).URL" alt=""></div>
+									<div class="hero-nav-img"><img src="$HeroPhoto.FocusFill(212,167).URL" alt=""></div>
 									<strong>$HeroTitle</strong>
 								</a>
 							</div>
@@ -69,7 +69,7 @@
 								<a href="$AssociatedPage.Link">
 									<div class="program-top">
 										<div class="initiative-img">
-											<div class="scale" style="background-image: url($ProgramPhoto.CroppedImage(330,225).URL);"></div>
+											<div class="scale" style="background-image: url($ProgramPhoto.Fill(330,225).URL);"></div>
 											<h4>$ProgramTitle</h4>
 										</div>
 									</div>
@@ -90,7 +90,7 @@
 									<a href="$AssociatedPage.Link">
 										<div class="program-top">
 											<div class="initiative-img">
-												<div class="scale" style="background-image: url($ProgramPhoto.CroppedImage(330,225).URL);"></div>
+												<div class="scale" style="background-image: url($ProgramPhoto.Fill(330,225).URL);"></div>
 												<h4>$ProgramTitle</h4>
 											</div>
 										</div>
@@ -158,7 +158,7 @@
 												<span class="author">by
 												<% loop $Credits %><% if not $First && not $Last %>, <% end_if %><% if not $First && $Last %> and <% end_if %><% if $URLSegment %><a href="$URL">$Name.XML</a><% else %>$Name.XML<% end_if %><% end_loop %> <span class="bar">|</span> </span>
 											<% end_if %>
-											<span class="date">$PublishDate.format("F d, Y")</span>
+											<span class="date">$PublishDate.format("MMMM d, YYYY")</span>
 											<% if $Categories.exists %>
 												<span class="bar">|</span>
 												<% loop $Categories %>

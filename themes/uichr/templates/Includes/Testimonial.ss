@@ -1,7 +1,7 @@
 <% if $TestimonialQuote %>
 	<blockquote class="testimonial">
 		<% if $TestimonialPhoto %>
-			<img src="$TestimonialPhoto.CroppedFocusedImage(200,200).URL" alt="Testimony from $TestimonialName">
+			<img src="$TestimonialPhoto.FocusFill(200,200).URL" alt="Testimony from $TestimonialName">
 		<% end_if %>
 		<% if $TestimonialName %>
 			<footer>

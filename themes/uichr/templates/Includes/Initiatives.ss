@@ -10,7 +10,7 @@
 					<li class="justify-item">
 						<a href="$Link" class="initiative-block">
 							<div class="initiative-img">
-								<div class="scale" style="background-image: url($PageSummaryImg.CroppedImage(340,225).URL);"></div>
+								<div class="scale" style="background-image: url($PageSummaryImg.Fill(340,225).URL);"></div>
 							</div>
 							<div class="initiative-body">
 								$Title
@@ -38,7 +38,7 @@
 					<li class="justify-item">
 						<a href="$Link" class="initiative-block">
 							<div class="initiative-img">
-								<div class="scale" style="background-image: url($PageSummaryImg.CroppedImage(330,225).URL);"></div>
+								<div class="scale" style="background-image: url($PageSummaryImg.Fill(330,225).URL);"></div>
 							</div>
 							<div class="initiative-body">
 								$Title

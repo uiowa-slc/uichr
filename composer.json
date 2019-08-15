@@ -1,55 +1,71 @@
 {
-	"name": "silverstripe/installer",
-	"description": "The SilverStripe Framework Installer",
-	"require": {
-		"php": ">=5.3.2",
-		"silverstripe/cms": "3.6.5",
-		"silverstripe/framework": "3.6.5",
-		"md/ac-json-events" : "dev-master",
-		"silverstripe/userforms": "*",
-		"md/rss-display" : "dev-master",
-		"silverstripe/googlesitemaps": "*",
-		"jonom/silverstripe-betternavigator" : "*",
-		"jonom/focuspoint" : "*",
-		"silverstripe/blog" : "2.*",
-		"silverstripe/widgets": "*",
-		"colymba/gridfield-bulk-editing-tools" : "*",
-		"md/division-bar" : "*",
-		"md/division-analytics" : "*",
-		"undefinedoffset/sortablegridfield": "*",
-		"silverstripe-australia/addressable": "^1.1",
-		"silverstripe/activedirectory" : "3.*"
-
-	},
-
-	"minimum-stability": "dev",
-		"repositories": [
-		{
-				"type": "vcs",
-				"url": "https://github.com/StudentLifeMarketingAndDesign/ac-json-events"
-		},
-		{
-				"type": "vcs",
-				"url": "https://github.com/StudentLifeMarketingAndDesign/rss-display"
-		},
-		{
-				"type": "vcs",
-				"url": "https://github.com/StudentLifeMarketingAndDesign/division-bar"
-
-		},
-                {
-                                "type": "vcs",
-                                "url": "https://github.com/StudentLifeMarketingAndDesign/division-analytics"
-
-                },
+    "name": "silverstripe/installer",
+    "description": "The SilverStripe Framework Installer",
+    "require": {
+        "php": ">=5.3.2",
+        "silverstripe/recipe-plugin": "^1.2",
+        "silverstripe/recipe-cms": "4.4.*@stable",
+        "md/ac-json-events": "dev-ss4.x-ui",
+        "md/saml": "dev-md",
+        "silverstripe/userforms": "*",
+        "silverstripe/googlesitemaps": "*",
+        "jonom/silverstripe-betternavigator": "*",
+        "jonom/focuspoint": "*",
+        "silverstripe/blog": "*",
+        "silverstripe/widgets": "*",
+        "colymba/gridfield-bulk-editing-tools": "*",
+        "md/division-analytics": "1.*",
+        "md/uiowa-bar": "*",
+        "md/deploy-helper": "*",
+        "undefinedoffset/sortablegridfield": "*",
+        "symbiote/silverstripe-addressable": "*"
+    },
+    "minimum-stability": "dev",
+    "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/StudentLifeMarketingAndDesign/silverstripe-activedirectory"
-
+            "url": "https://github.com/StudentLifeMarketingAndDesign/ac-json-events"
         },
         {
-             "type": "vcs",
-             "url": "https://github.com/StudentLifeMarketingAndDesign/silverstripe-betternavigator"
+            "type": "vcs",
+            "url": "https://github.com/StudentLifeMarketingAndDesign/uiowa-bar"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/StudentLifeMarketingAndDesign/deploy-helper"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/StudentLifeMarketingAndDesign/division-analytics"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/StudentLifeMarketingAndDesign/silverstripe-saml"
         }
-	 ]
+    ],
+    "extra": {
+    	"resources-dir": "_resources",
+    	"expose": [
+    		"themes/uichr/js",
+    		"themes/uichr/css",
+    		"themes/uichr/favicon",
+    		"themes/uichr/images"
+
+
+    	],
+        "project-files-installed": [
+            "app/.htaccess",
+            "app/_config.php",
+            "app/_config/mysite.yml",
+            "app/src/Page.php",
+            "app/src/PageController.php"
+        ],
+        "public-files-installed": [
+            ".htaccess",
+            "index.php",
+            "install-frameworkmissing.html",
+            "install.php",
+            "web.config"
+        ]
+    }
 }

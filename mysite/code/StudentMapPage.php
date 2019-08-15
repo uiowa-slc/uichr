@@ -1,5 +1,9 @@
 <?php
 
+use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
+use SilverStripe\Forms\GridField\GridField;
+use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
+
 class StudentMapPage extends Page {
 
 	private static $db = array(
@@ -15,7 +19,7 @@ class StudentMapPage extends Page {
 		$gridFieldConfigStudents = GridFieldConfig_RecordEditor::create();
 		$gridfield = new GridField("StudentsViewer", "Student Viewer", Student::get(), $gridFieldConfigStudents);
 
-		$fields->addFieldToTab('Root.Main', new HTMLEditorField('Content', 'Content'));
+		$fields->addFieldToTab('Root.Main', HTMLEditorField::create('Content', 'Content')->addExtraClass('stacked'));
 
 		$fields->addFieldToTab('Root.Main', $gridfield);
 

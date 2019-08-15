@@ -1,4 +1,6 @@
 <?php
+
+use SilverStripe\ORM\DataExtension;
 class CalendarEventExtension extends DataExtension {
 
 	private static $db = array(

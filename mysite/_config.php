@@ -1,35 +1,13 @@
 <?php
 
-global $project;
-$project = 'mysite';
+use SilverStripe\Security\PasswordValidator;
+use SilverStripe\Security\Member;
+use SilverStripe\Control\Director;
 
-global $database;
-$database = 'uichr';
-
-require_once("conf/ConfigureFromEnv.php");
-
-// Calendar::add_extension('CalendarExtension');
-// CalendarEvent::add_extension('CalendarEventExtension');
-
-MySQLDatabase::set_connection_charset('utf8');
-
-// Set the current theme. More themes can be downloaded from
-// http://www.silverstripe.org/themes/
-SSViewer::set_theme('simple');
-
-FulltextSearchable::enable(array('SiteTree'));
-
-// Set the site locale
-i18n::set_locale('en_US');
-
-// Enable nested URLs for this site (e.g. page/sub-page/)
-if (class_exists('SiteTree')) SiteTree::enable_nested_urls();
-
-SiteConfig::add_extension('SiteConfigExtension');
-
+// remove PasswordValidator for SilverStripe 5.0
+$validator = PasswordValidator::create();
+// Settings are registered via Injector configuration - see passwords.yml in framework
+Member::set_password_validator($validator);
 if(Director::isLive()) {
 	Director::forceSSL();
 }
-GD::set_default_quality(80);
-Authenticator::unregister('MemberAuthenticator');
-Authenticator::set_default_authenticator('SAMLAuthenticator');

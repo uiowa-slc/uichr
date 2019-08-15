@@ -1,5 +1,7 @@
 <?php
 
+use SilverStripe\Admin\ModelAdmin;
+
 class StudentAdmin extends ModelAdmin {
 	private static $menu_title = 'Students';
 

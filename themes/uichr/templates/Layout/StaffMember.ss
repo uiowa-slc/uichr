@@ -16,7 +16,7 @@
 			<h3 id="main-content" class="sr-only" tabindex="-1">Main Content</h3>
 			<div class="<% if $Children || $Parent %>col-lg-8 children<% else %>col-md-10 col-md-offset-1<% end_if %>">
 				<div class="staffimg">
-					<img src="$StaffPhoto.CroppedFocusedImage(400,500).URL" alt="$Title">
+					<img src="$StaffPhoto.FocusFill(400,500).URL" alt="$Title">
 					<!-- Email & Phone -->
 
 				</div>
@@ -64,7 +64,7 @@
 				<% if PreviousPage %>
 					<a href="$PreviousPage.Link" class="prev link">
 						<span class="arrows">&larr;</span>
-						<% if $PreviousPage.StaffPhoto %><img src="$PreviousPage.StaffPhoto.CroppedFocusedImage(100,100).URL" alt="Previous Staff Member"><% end_if %>
+						<% if $PreviousPage.StaffPhoto %><img src="$PreviousPage.StaffPhoto.FocusFill(100,100).URL" alt="Previous Staff Member"><% end_if %>
 						<p class="staff-prevnext-name">
 							<span class="title">$PreviousPage.Title</span>
 							<% if $PreviousPage.StaffPosition %><span class="position">$PreviousPage.StaffPosition</span><% end_if %>
@@ -77,7 +77,7 @@
 							<span class="title">$NextPage.Title</span>
 							<% if $NextPage.StaffPosition %><span class="position">$NextPage.StaffPosition</span><% end_if %>
 						</p>
-						<% if $NextPage.StaffPhoto %><img src="$NextPage.StaffPhoto.CroppedFocusedImage(100,100).URL" alt="Next Staff Member"><% end_if %>
+						<% if $NextPage.StaffPhoto %><img src="$NextPage.StaffPhoto.FocusFill(100,100).URL" alt="Next Staff Member"><% end_if %>
 						<span class="arrows">&rarr;</span>
 					</a>
 				<% end_if %>

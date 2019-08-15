@@ -19,7 +19,7 @@
 			<div class="content <% if $Children || $Parent %>col-lg-8 children<% else %>col-md-10 col-md-offset-1<% end_if %>">
 
 				<% if $FeaturedImage %>
-					<img src="$FeaturedImage.SetWidth(350).URL" alt="" class="right entryphoto">
+					<img src="$FeaturedImage.ScaleWidth(350).URL" alt="" class="right entryphoto">
 				<% end_if %>
 
 				$Content
@@ -31,7 +31,7 @@
 						<span class="author">by
 						<% loop $Credits %><% if not $First && not $Last %>, <% end_if %><% if not $First && $Last %> and <% end_if %><% if $URLSegment %><a href="$URL">$Name.XML</a><% else %>$Name.XML<% end_if %><% end_loop %> <span class="bar">|</span> </span>
 					<% end_if %>
-					<span class="date">$PublishDate.format("F d, Y")</span>
+					<span class="date">$PublishDate.Format("MMMM d, YYYY")</span>
 					<% if $Categories.exists %>
 						<span class="bar">|</span>
 						<% loop $Categories %>

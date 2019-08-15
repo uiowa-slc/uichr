@@ -1,4 +1,13 @@
 <?php
+
+use SilverStripe\CMS\Model\SiteTree;
+use SilverStripe\Forms\HeaderField;
+use SilverStripe\Forms\TextareaField;
+use SilverStripe\Forms\TextField;
+use SilverStripe\Forms\TreeDropdownField;
+use SilverStripe\Forms\GridField\GridFieldConfig_RelationEditor;
+use SilverStripe\Forms\GridField\GridField;
+use UndefinedOffset\SortableGridField\Forms\GridFieldSortableRows;
 class HomePage extends Page {
 	private static $db = array(
 		"HeroContent" => "Text",
@@ -7,13 +16,13 @@ class HomePage extends Page {
 		"ProgramContent" => "Text",
 	);
 	private static $has_one = array(
-		'CarouselAssociatedPage' => 'SiteTree',
+		'CarouselAssociatedPage' => SiteTree::class,
 	);
 	private static $has_many = array(
 		'Programs' => 'Program',
 		'Heros' => 'Hero'
 	);
-	function getCMSFields() {
+	public function getCMSFields() {
 
 		$fields = parent::getCMSFields();
 		$fields->removeByName("Widgets");
@@ -24,10 +33,10 @@ class HomePage extends Page {
 		$fields->removeByName("MainPhoto");
 
 
-		$fields->addFieldToTab("Root.Main", new HeaderField( '<br><h3>Carousel</h3>', '3', true ) );
-		$fields->addFieldToTab("Root.Main", new TextareaField("HeroContent", "Carousel Content"));
+		$fields->addFieldToTab("Root.Main", new HeaderField( 'Carousel', 'Carousel') );
+		$fields->addFieldToTab("Root.Main", TextareaField::create("HeroContent", "Carousel Content")->addExtraClass('stacked'));
 		$fields->addFieldToTab("Root.Main", new TextField("HeroContentLinkText", "Link Text"));
-		$fields->addFieldToTab("Root.Main", new TreeDropdownField('CarouselAssociatedPageID', 'Link to this page', 'SiteTree'));
+		$fields->addFieldToTab("Root.Main", new TreeDropdownField('CarouselAssociatedPageID', 'Link to this page', SiteTree::class));
 
 		$gridFieldConfig = GridFieldConfig_RelationEditor::create()->addComponents();
 		$gridFieldConfig->addComponent(new GridFieldSortableRows('SortOrder'));
@@ -35,7 +44,7 @@ class HomePage extends Page {
 		$fields->addFieldToTab("Root.Main", $gridField);
 
 
-		$fields->addFieldToTab("Root.Main", new HeaderField( '<br><h3>Programs</h3>', '3', true ) );
+		$fields->addFieldToTab("Root.Main", new HeaderField( 'Programs', 'Programs' ) );
 		$fields->addFieldToTab("Root.Main", new TextField("ProgramHeading", "Programs Heading"));
 		$fields->addFieldToTab("Root.Main", new TextareaField("ProgramContent", "Programs Heading"));
 		$gridFieldConfig = GridFieldConfig_RelationEditor::create()->addComponents();
@@ -46,36 +55,5 @@ class HomePage extends Page {
 
 
 		return $fields;
-	}
-}
-class HomePage_Controller extends Page_Controller {
-
-	/**
-	 * An array of actions that can be accessed via a request. Each array element should be an action name, and the
-	 * permissions or conditions required to allow the user to access it.
-	 *
-	 * <code>
-	 * array (
-	 *     'action', // anyone can access this action
-	 *     'action' => true, // same as above
-	 *     'action' => 'ADMIN', // you must have ADMIN permissions to access this action
-	 *     'action' => '->checkAction' // you can only access this action if $this->checkAction() returns true
-	 * );
-	 * </code>
-	 *
-	 * @var array
-	 */
-	private static $allowed_actions = array(
-	);
-
-	//function Events(){
-	//	$where = "ClassName = 'EventPage'";
-	//	$result = DataObject::get("EventPage",$where,"","");
-	//	return $result;
-	//}
-
-	public function init() {
-		parent::init();
-
 	}
 }

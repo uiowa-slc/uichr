@@ -1,8 +1,14 @@
 <?php
 
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\TextField;
+use SilverStripe\Control\Email\Email;
+use SilverStripe\ORM\DataExtension;
+
+
 class SiteConfigExtension extends DataExtension {
 
-	static $db = array(
+	private static $db = array(
 		'TwitterLink' => 'Text',
 		'FacebookLink' => 'Text',
 		'Analytics' => 'Text',
@@ -17,7 +23,7 @@ class SiteConfigExtension extends DataExtension {
 		'DonateLink' => 'Text',
 	);
 
-	static $has_one = array(
+	private static $has_one = array(
 
 	);
 
@@ -32,7 +38,7 @@ class SiteConfigExtension extends DataExtension {
 		$fields->addFieldToTab('Root.Main', new TextField('Zip', 'Zip Code'));
 		$fields->addFieldToTab('Root.Main', new TextField('Phone', 'Phone Number'));
 		$fields->addFieldToTab('Root.Main', new TextField('Fax', 'Fax'));
-		$fields->addFieldToTab('Root.Main', new TextField('Email', 'Email'));
+		$fields->addFieldToTab('Root.Main', new TextField(Email::class, Email::class));
 		$fields->addFieldToTab('Root.Main', new TextField('DonateLink', 'Donation Link'));
 
 		return $fields;
@@ -40,7 +46,7 @@ class SiteConfigExtension extends DataExtension {
 	}
 
 }
-class SiteConfigExtensionPage_Controller extends Page_Controller {
+class SiteConfigExtensionPage_Controller extends PageController {
 
 	public function init() {
 		parent::init();
