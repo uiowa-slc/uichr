@@ -28,7 +28,7 @@ class SiteConfigExtension extends DataExtension {
 	);
 
 	public function updateCMSFields(FieldList $fields) {
-		$fields->addFieldToTab('Root.Main', new TextField('Analytics', 'Google Analytics Tracking ID'));
+		// $fields->addFieldToTab('Root.Main', new TextField('Analytics', 'Google Analytics Tracking ID'));
 		$fields->addFieldToTab('Root.Main', new TextField('TwitterLink', 'Twitter Account URL'));
 		$fields->addFieldToTab('Root.Main', new TextField('FacebookLink', 'Facebook Account URL'));
 		$fields->addFieldToTab('Root.Main', new TextField('Address1', 'Address 1'));
@@ -38,7 +38,7 @@ class SiteConfigExtension extends DataExtension {
 		$fields->addFieldToTab('Root.Main', new TextField('Zip', 'Zip Code'));
 		$fields->addFieldToTab('Root.Main', new TextField('Phone', 'Phone Number'));
 		$fields->addFieldToTab('Root.Main', new TextField('Fax', 'Fax'));
-		$fields->addFieldToTab('Root.Main', new TextField(Email::class, Email::class));
+		// $fields->addFieldToTab('Root.Main', new TextField(Email::class, Email::class));
 		$fields->addFieldToTab('Root.Main', new TextField('DonateLink', 'Donation Link'));
 
 		return $fields;
