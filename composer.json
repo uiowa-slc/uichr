@@ -44,15 +44,13 @@
         }
     ],
     "extra": {
-    	"resources-dir": "_resources",
-    	"expose": [
-    		"themes/uichr/js",
-    		"themes/uichr/css",
-    		"themes/uichr/favicon",
-    		"themes/uichr/images"
-
-
-    	],
+        "resources-dir": "_resources",
+        "expose": [
+            "themes/uichr/js",
+            "themes/uichr/css",
+            "themes/uichr/favicon",
+            "themes/uichr/images"
+        ],
         "project-files-installed": [
             "app/.htaccess",
             "app/_config.php",
