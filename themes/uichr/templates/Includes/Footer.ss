@@ -61,13 +61,11 @@
 	<div class="copy">
 		<div class="container">
 			<p class="rights">&copy; {$Now.Year} The University of Iowa. All rights reserved. Created by <a href="https://md.studentlife.uiowa.edu/" target="_blank">M+D</a></p>
-			<div class="newsletter">
-				<!-- Begin MailChimp Signup Form -->
+			<%-- <div class="newsletter">
 				<div id="mc_embed_signup">
 					<form action="//uichr.us11.list-manage.com/subscribe/post?u=e00f53e9c4ad5418866b0d924&amp;id=4e940b930b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 					<div id="mc_embed_signup_scroll">
 						<h2>Subscribe:</h2>
-						<%-- <div class="indicates-required"><span class="asterisk">*</span> indicates required</div> --%>
 						<div class="mc-field-group">
 							<label for="mce-EMAIL" class="sr-only">Email Address  <span class="asterisk">*</span></label>
 							<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
@@ -80,8 +78,7 @@
 							<div class="response" id="mce-success-response" style="display:none"></div>
 						</div>
 					</form>
-				</div>
-				<!--End mc_embed_signup-->
+				</div> --%>
 			</div>
 		</div>
 	</div>
