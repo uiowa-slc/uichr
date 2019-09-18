@@ -1,20 +1,20 @@
 <% with $StartDateTime %>
-	<time itemprop="startDate" datetime="$Format(c)">
-		$Format(F) $Format(jS)
+	<time itemprop="startDate" datetime="$URLDatetime">
+		$Format(MMMM d)
 	</time>
-	at $Format("g:ia")
+	at $Format("h:mm a")
 <% end_with %>
 <% if $EndTime %>
 	<% with $EndTime %>
-		to $Format("g:ia")
+		to $Format("h:mm a")
 	<% end_with %>
 <% end_if %>
 <% if $EndDate %>
 	until
 	<% with $EndDate %>
-		<time itemprop="endDate" datetime="$Format(c)">
-			$Format(F) $Format(j)
+		<time itemprop="endDate" datetime="$URLDatetime">
+			$Format(MMMM d)
 		</time>
-		 $Format("g:ia")
+		 $Format("h:mm a")
 	<% end_with %>
 <% end_if %>

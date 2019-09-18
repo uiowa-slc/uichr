@@ -27,7 +27,7 @@
 							</a></strong>
 						<br>
 						<% if $Content %>
-							$Content.LimitWordCountXML
+							$Content.Summary(50)
 						<% end_if %>
 						</p>
 						<div class="results-url">$AbsoluteLink</div>
