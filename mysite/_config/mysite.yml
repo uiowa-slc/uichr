@@ -18,3 +18,8 @@ Student:
   extensions:
     - Symbiote\Addressable\Addressable
     - Symbiote\Addressable\Geocodable
+SilverStripe\Assets\Flysystem\AssetAdapter:
+  file_permissions:
+    'file':
+      'public': '0644'
+      'private': '0600'
