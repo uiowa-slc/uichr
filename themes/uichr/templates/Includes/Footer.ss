@@ -46,11 +46,18 @@
 					<div class="col">
 						<h4 class="connect">Connect</h4>
 						<ul class="social unstyled">
+								<% if $SiteConfig.TwitterLink %>
+								<li>
+									<a href="$SiteConfig.TwitterLink" target="_blank"><img src="{$ThemeDir}/images/twitter-square.png" alt="Twitter icon">Twitter</a>
+								</li>
+							<% end_if %>
+							<% if $SiteConfig.FacebookLink %>
+								<li>
+									<a href="$SiteConfig.FacebookLink" target="_blank"><img src="{$ThemeDir}/images/facebook-square.png" alt="Facebook icon">Facebook</a>
+								</li>
+							<% end_if %>
 							<li>
-								<a href="$SiteConfig.TwitterLink" target="_blank"><img src="{$ThemeDir}/images/twitter-square.png" alt="Twitter icon">Twitter</a>
-							</li>
-							<li>
-								<a href="$SiteConfig.FacebookLink" target="_blank"><img src="{$ThemeDir}/images/facebook-square.png" alt="Facebook icon">Facebook</a>
+								<a href="https://lp.constantcontact.com/su/OyES1hR" target="_blank"><img src="{$ThemeDir}/images/mail.png" alt="newsletter sign up">Email Sign Up</a>
 							</li>
 						</ul>
 					</div>
@@ -61,9 +68,7 @@
 	<div class="copy">
 		<div class="container">
 			<p class="rights">&copy; {$Now.Year} The University of Iowa. All rights reserved. Created by <a href="https://md.studentlife.uiowa.edu/" target="_blank">M+D</a></p>
-			<div class="newsletter text-right">
-				<a href="https://lp.constantcontact.com/su/OyES1hR" target="_blank" class="btn btn--border">Newsletter Sign Up</a>
-			</div>
+
 		</div>
 	</div>
 </footer>
