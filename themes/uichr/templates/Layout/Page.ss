@@ -20,7 +20,9 @@
 
 				$Content
 				$Form
-				<% include ChildPages %>
+				<% if $ShowChildPages %>
+					<% include ChildPages %>
+				<% end_if %>
 			</div><!-- end .col -->
 
 			<!-- Side Bar -->
