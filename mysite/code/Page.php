@@ -6,12 +6,14 @@ use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Forms\TextareaField;
 use SilverStripe\TagField\TagField;
 use SilverStripe\CMS\Model\SiteTree;
+use SilverStripe\Forms\CheckboxField;
 use SilverStripe\ORM\ArrayList;
 use SilverStripe\CMS\Controllers\ContentController;
 class Page extends SiteTree {
 
 	private static $db = array(
 		"PageSummary" => "Text",
+		'ShowChildPages' => 'Boolean(1)'
 	);
 
 	private static $has_one = array(
@@ -29,6 +31,8 @@ class Page extends SiteTree {
 		$fields->addFieldToTab("Root.Main", new UploadField("MainPhoto", "Page Photo (optional)"), "Content");
 		$fields->addFieldToTab('Root.PageSummary', new TextareaField('PageSummary', 'Page Description'));
 		$fields->addFieldToTab("Root.PageSummary", new UploadField("PageSummaryImg", "Page Summary Photo"));
+
+		$fields->addFieldToTab('Root.Settings', CheckboxField::create('ShowChildPages','Show child pages if available (Yes)'));
 
 		$tags = BlogTag::get();
 		$tagField = TagField::create(
