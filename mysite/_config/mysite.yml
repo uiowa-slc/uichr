@@ -23,3 +23,5 @@ SilverStripe\Assets\Flysystem\AssetAdapter:
     'file':
       'public': '0644'
       'private': '0600'
+UiCalendar:
+  default_future_limit: 'year'
