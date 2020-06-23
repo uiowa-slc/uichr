@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "93b40a99cd31eaac558e9e175f7a8f6f",
+    "content-hash": "8d6af2250055f3af67e61bf8fa9fb8e6",
     "packages": [
         {
             "name": "bramus/ansi-php",
@@ -1201,16 +1201,16 @@
         },
         {
             "name": "md/uiowa-bar",
-            "version": "dev-master",
+            "version": "2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/StudentLifeMarketingAndDesign/uiowa-bar.git",
-                "reference": "d1f5bfc400de649eb14084754bedf45ff2f4cff7"
+                "reference": "71c7c368241d39c88114b692176cee8cce4cba5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/StudentLifeMarketingAndDesign/uiowa-bar/zipball/d1f5bfc400de649eb14084754bedf45ff2f4cff7",
-                "reference": "d1f5bfc400de649eb14084754bedf45ff2f4cff7",
+                "url": "https://api.github.com/repos/StudentLifeMarketingAndDesign/uiowa-bar/zipball/71c7c368241d39c88114b692176cee8cce4cba5b",
+                "reference": "71c7c368241d39c88114b692176cee8cce4cba5b",
                 "shasum": ""
             },
             "require": {
@@ -1221,10 +1221,10 @@
             "type": "silverstripe-vendormodule",
             "description": "The University of Iowa Bar",
             "support": {
-                "source": "https://github.com/StudentLifeMarketingAndDesign/uiowa-bar/tree/master",
+                "source": "https://github.com/StudentLifeMarketingAndDesign/uiowa-bar/tree/2.x",
                 "issues": "https://github.com/StudentLifeMarketingAndDesign/uiowa-bar/issues"
             },
-            "time": "2019-11-04T15:17:42+00:00"
+            "time": "2020-05-29T13:55:18+00:00"
         },
         {
             "name": "monolog/monolog",
