@@ -4,7 +4,7 @@
 		<div class="row">
 			<div class="col-md-6">
 				<a href="{$BaseHref}" class="footer-logo">
-					<img src="{$ThemeDir}/images/UICHR-logo.png" alt="Center for Human Rights logo">
+					<img src="{$ThemeDir}/images/uichr_logo.png" alt="Center for Human Rights logo">
 				</a>
 				<div class="footer-address clearfix" itemscope itemtype="http://schema.org/LocalBusiness">
 					<p>

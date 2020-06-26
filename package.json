@@ -2,13 +2,16 @@
   "name": "uichr",
   "version": "2.0.0",
   "devDependencies": {
+    "bootstrap": "^4.5.0",
     "grunt": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-imagemin": "*",
     "grunt-contrib-jshint": "*",
     "grunt-contrib-nodeunit": "*",
-    "grunt-contrib-uglify": "*",
     "grunt-contrib-sass": "*",
-    "grunt-contrib-imagemin": "*",
-    "grunt-contrib-concat": "*",
-    "grunt-contrib-watch": "*"
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-sass": "^3.1.0",
+    "node-sass": "^4.14.1"
   }
 }

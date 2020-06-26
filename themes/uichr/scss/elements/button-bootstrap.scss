@@ -67,14 +67,14 @@ button {
 /* Link ========== */
 
 .btn-link {
-	color: #fff;
-	background-color: $link;
+	color: #333;
+	background-color: $gold;
 	border:none;
 	transition: background-color .2s ease-in-out;
 	box-shadow: 3px 4px 0 rgba(0,0,0,0.08);
 	&:hover, &:focus, &:active {
-		color: #fff;
-		background-color: darken($link,5%);
+		color: #111;
+		background-color: darken($gold,5%);
 		border-color: #bbb;
 	}
 }

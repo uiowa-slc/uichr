@@ -8,12 +8,6 @@
 			<% end_loop %>
 		</ul>
 	</div>
-	<!-- Search -->
-	<% if $SearchForm %>
-		<div class="search-bar" role="search">
-		  $SearchForm
-		</div>
-	<% end_if %>
 	<div class="shifter-address">
 		<div class="contain">
 			<div itemscope itemtype="http://schema.org/Organization">

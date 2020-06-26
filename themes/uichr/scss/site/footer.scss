@@ -1,5 +1,5 @@
 .footer {
-	background-color:  $green;
+	background-color:  $black;
 	color: #eee;
 	position: relative;
 	padding: 2em 0 0;
@@ -14,7 +14,8 @@
 ----------------------------------------------------*/
 .footer-logo img {
 	display: block;
-	margin: 0 auto;
+    margin: 0 auto;
+    max-width: 240px;
 	@media (min-width: $break-small) {
 		display: inline-block;
 		margin: 0;
@@ -47,7 +48,7 @@
 	}
 }
 .footer .donate-btn {
-	color: $green;
+	color: #333;
 	display: block;
 	font-size: 16px;
 	text-transform: uppercase;
@@ -60,8 +61,8 @@
 	letter-spacing: 1px;
 	text-align: center;
 	&:hover, &:focus {
-		background-color: darken($green,10%);
-		color: #fff;
+		background-color: $gold;
+		color: #333;
 	}
 	@media (min-width: 550px) {
 		float: left;
@@ -80,7 +81,7 @@
 }
 .donate h4 {
 	margin: 0;
-	font-size: 28px;
+	font-size: 25px;
 	color: #fff;
 	font-weight: normal;
 	@media (min-width: 550px) {
@@ -118,7 +119,7 @@
 	padding: 7px 10px;
 	transition: background-color .1s ease-in-out;
 	&:hover, &:focus {
-		background-color: darken($green, 3%);
+		background-color: #444;
 	}
 }
 .footer-links .connect {
@@ -146,7 +147,7 @@
 	font-size: 14px;
 	margin: 3em 0 0;
 	padding: 1em;
-	background-color: darken($green, 2%);
+	background-color: #000;
 	& p {
 		margin: 0;
 	}
