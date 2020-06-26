@@ -16,6 +16,9 @@ class Student extends DataObject {
 	private static $has_one = array(
 		'Image' => Image::class,
 
+    );
+    private static $owns = array(
+		'Image'
 	);
 
 

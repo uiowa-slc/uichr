@@ -11,6 +11,10 @@ class Initiative extends Page {
 
 	private static $has_one = array(
 		"PagePhoto" => Image::class
+    );
+
+    private static $owns = array(
+		'PagePhoto'
 	);
 
 	public function getCMSFields(){

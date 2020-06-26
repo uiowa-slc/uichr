@@ -17,6 +17,9 @@ class StaffMember extends Page {
 	private static $has_one = array(
 		"StaffPhoto" => Image::class,
 		"StaffCV" => Image::class,
+    );
+    private static $owns = array(
+		'StaffPhoto'
 	);
 
 

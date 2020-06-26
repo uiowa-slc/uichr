@@ -22,6 +22,9 @@ class Page extends SiteTree {
 	);
 	private static $many_many = array(
 		'PageTags' => BlogTag::class,
+    );
+    private static $owns = array(
+		'MainPhoto'
 	);
 
 	public function getCMSFields() {

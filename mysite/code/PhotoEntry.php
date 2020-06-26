@@ -17,6 +17,9 @@ class PhotoEntry extends DataObject {
 	private static $has_one = array(
 		'Photo' => Image::class,
 		'InteriorPage' => 'InteriorPage'
+    );
+    private static $owns = array(
+		'Photo'
 	);
 
 	// Summary fields

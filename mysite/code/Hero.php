@@ -24,6 +24,9 @@ class Hero extends DataObject {
     'HeroPhoto' => Image::class,
     'HomePage' => 'HomePage'
   );
+  private static $owns = array(
+    'HeroPhoto'
+  );
 
   // Summary fields
   private static $summary_fields = array(

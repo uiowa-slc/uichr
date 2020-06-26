@@ -24,6 +24,9 @@ class Program extends DataObject {
     'ProgramPhoto' => Image::class,
     'HomePage' => 'HomePage'
   );
+  private static $owns = array(
+    'ProgramPhoto'
+  );
 
   // Summary fields
   private static $summary_fields = array(
