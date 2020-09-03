@@ -55,6 +55,11 @@
 								<li>
 									<a href="$SiteConfig.FacebookLink" target="_blank"><img src="{$ThemeDir}/images/facebook-square.png" alt="Facebook icon">Facebook</a>
 								</li>
+                            <% end_if %>
+                            <% if $SiteConfig.YoutubeLink %>
+								<li>
+									<a href="$SiteConfig.YoutubeLink" target="_blank"><img src="{$ThemeDir}/images/youtube.png" alt="YouTube icon">YouTube</a>
+								</li>
 							<% end_if %>
 							<li>
 								<a href="https://lp.constantcontact.com/su/OyES1hR" target="_blank"><img src="{$ThemeDir}/images/mail.png" alt="newsletter sign up">Email Sign Up</a>
