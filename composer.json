@@ -14,7 +14,7 @@
         "silverstripe/blog": "*",
         "silverstripe/widgets": "*",
         "colymba/gridfield-bulk-editing-tools": "*",
-        "md/division-analytics": "1.*",
+        "md/division-analytics": "1.3.*",
         "md/uiowa-bar": "2.*",
         "undefinedoffset/sortablegridfield": "*",
         "symbiote/silverstripe-addressable": "*"
