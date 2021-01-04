@@ -18,7 +18,10 @@
 						<% if $SiteConfig.Fax %><span itemprop="telephone">Fax: $SiteConfig.Fax</span> <br><% end_if %>
 						<% if $SiteConfig.Email %>Email: <a href="mailto:$SiteConfig.Email">$SiteConfig.Email</a><% end_if %>
 					</p>
-				</div>
+                </div>
+                <a href="https://law.uiowa.edu/" class="law-logo" target="_blank">
+                    <img src="{$ThemeDir}/images/college-of-law.png" alt="college of law">
+                </a>
 			</div>
 			<div class="col-md-6">
 
