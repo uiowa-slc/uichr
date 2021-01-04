@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
+	$GlobalAnalytics
 	<% include GoogleTagManager %>
 	<% base_tag %>
 	<meta charset="utf-8">
