@@ -19,8 +19,9 @@
 						<% if $SiteConfig.Email %>Email: <a href="mailto:$SiteConfig.Email">$SiteConfig.Email</a><% end_if %>
 					</p>
                 </div>
-                <a href="https://law.uiowa.edu/" class="law-logo" target="_blank">
-                    <img src="{$ThemeDir}/images/college-of-law.png" alt="college of law">
+                <br />
+                <a href="https://law.uiowa.edu/" class="footer-logo" target="_blank">
+                    <img src="{$ThemeDir}/images/college-of-law-lockup.png" alt="college of law">
                 </a>
 			</div>
 			<div class="col-md-6">
