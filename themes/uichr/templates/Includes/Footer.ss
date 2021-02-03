@@ -21,7 +21,7 @@
                 </div>
                 <br />
                 <a href="https://law.uiowa.edu/" class="footer-logo" target="_blank">
-                    <img src="{$ThemeDir}/images/college-of-law-lockup.png" alt="college of law">
+                    College of Law
                 </a>
 			</div>
 			<div class="col-md-6">

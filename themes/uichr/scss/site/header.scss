@@ -3,18 +3,24 @@
 	// box-shadow: 0 2px 2px rgba(0,0,0,.1);
 	padding: .75em 0;
 	position: relative;
-	z-index: 110;
-}
-.logo {
-    display: block;
-    max-width: 230px;
-	@media (min-width: $break-large) {
+    z-index: 110;
+    & .site-title {
+        font-size: 35px;
         margin: 0 auto;
-        max-width: 260px;
-	}
-}
-.logo img {
-	display: block;
-	width: auto;
+        padding-right: 40px;
+        text-transform: uppercase;
+        text-align: left;
+        @media (min-width: $break-small) {
+            padding-right: 80px;
+        }
+        @media (min-width: $break-large) {
+            font-size: 45px;
+            padding-right: 0;
+            text-align: center;
+        }
+        & a {
+            color: #fff;
+        }
+    }
 }
 
