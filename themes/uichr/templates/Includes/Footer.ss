@@ -45,6 +45,7 @@
 							<% loop Menu(1).Limit(0,2) %>
 								<li><a href="$Link">$Title</a></li>
 							<% end_loop %>
+              <li><a href="https://law.uiowa.edu/about/land-acknowledgement" target="_blank">Land Acknowledgement</a></li>
 						</ul>
 					</div>
 					<div class="col">
