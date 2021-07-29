@@ -39,6 +39,23 @@ class StaffMember extends Page {
 
 	}
 
+
+	public function FirstName(){
+		$name = $this->Title;
+		$nameArray = explode(' ', $name);
+
+		return $nameArray[0];
+
+	}
+
+	public function Surname(){
+		$name = $this->Title;
+		$nameArray = explode(' ', $name, 2);
+
+		return $nameArray[1];
+
+	}
+
 	//private static $allowed_children = array("");
 
 }
